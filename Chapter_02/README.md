@@ -1,1 +1,5 @@
+# Chapter 2: End-to-End Machine Learning Project
+## 💡 Key Takeaways
 
+
+## 🧠 Self-Reflection & Insights
