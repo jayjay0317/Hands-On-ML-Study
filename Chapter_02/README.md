@@ -5,3 +5,5 @@
 - **Statistical Foundations in Model Evaluation:** Choosing between RMSE and MAE is a mathematical decision rather than a simple coding step. Recognizing how RMSE heavily penalizes outliers (L2 norm) compared to MAE (L1 norm) reinforced the necessity of analyzing the underlying data distribution before evaluating model performance.
 
 ## 🧠 Self-Reflection & Insights
+
+- stratified sampling
