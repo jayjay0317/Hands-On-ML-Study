@@ -6,4 +6,4 @@
 
 ## 🧠 Self-Reflection & Insights
 
-- stratified sampling
+- stratified sampling (add more later)
