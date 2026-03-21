@@ -6,4 +6,4 @@
 
 ## 🧠 Self-Reflection & Insights
 
-- stratified sampling (add more later)
+- stratified sampling (add more later ex. why it reduces bias)
