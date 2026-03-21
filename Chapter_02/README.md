@@ -8,4 +8,4 @@
 
 - stratified sampling (add more later ex. why it reduces bias)
 - Each splitter has a split() method that returns an iterator over different training/
-test splits of the same data.
+test splits of the same data. (cross-validation)
