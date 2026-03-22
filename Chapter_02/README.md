@@ -10,3 +10,7 @@
 - Each splitter has a split() method that returns an iterator over different training/
 test splits of the same data. (cross-validation)
 - data snooping (put the test set aside and onlyh explore the train set)
+- When creating new combined features, make sure they are not
+too linearly correlated with existing features: collinearity can cause
+issues with some models, such as linear regression. In particular,
+avoid simple weighted sums of existing features.
