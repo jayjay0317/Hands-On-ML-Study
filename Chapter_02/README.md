@@ -18,3 +18,4 @@ avoid simple weighted sums of existing features.
 - drop() creates a copy of the data and does not affect the original dataset
 - scikit-learn transformers output numpy arrays (why?)
 - ordinal encoder: gives numbers 1, 2, 3, ... to each category. Ml algorithms will assume that two nearby values are more silimar than two distant values -> use one-hot encoding to resolve this issue by creating one binary attribute per category (called dummy attributes)
+- the output of a onehotencoder is a SciPy sparse matrix, instead of a NumPy array
