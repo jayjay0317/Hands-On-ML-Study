@@ -15,3 +15,4 @@ too linearly correlated with existing features: collinearity can cause
 issues with some models, such as linear regression. In particular,
 avoid simple weighted sums of existing features.
 - imputation: filling in missing values (can use the SimpleImputer in sklearn)
+- drop() creates a copy of the data and does not affect the original dataset
