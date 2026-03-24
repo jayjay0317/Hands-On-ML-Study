@@ -20,3 +20,4 @@ avoid simple weighted sums of existing features.
 - ordinal encoder: gives numbers 1, 2, 3, ... to each category. Ml algorithms will assume that two nearby values are more silimar than two distant values -> use one-hot encoding to resolve this issue by creating one binary attribute per category (called dummy attributes)
 - the output of a onehotencoder is a SciPy sparse matrix, instead of a NumPy array
 - onehotencoder remembers which categories it was trained on
+- fit the scalers to the training data only. Once you have a trained scaler, you can then use it to transform any other set
