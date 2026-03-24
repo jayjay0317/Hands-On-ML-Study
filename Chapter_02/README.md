@@ -21,3 +21,7 @@ avoid simple weighted sums of existing features.
 - the output of a onehotencoder is a SciPy sparse matrix, instead of a NumPy array
 - onehotencoder remembers which categories it was trained on
 - fit the scalers to the training data only. Once you have a trained scaler, you can then use it to transform any other set
+- bucketizing: handles heavy-tailed features
+- handling multimodal distribution:
+    - method 1: bucketizing
+    - method 2: use similarity measure such as a RBF
