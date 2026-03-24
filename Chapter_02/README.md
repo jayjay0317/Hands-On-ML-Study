@@ -25,3 +25,5 @@ avoid simple weighted sums of existing features.
 - handling multimodal distribution:
     - method 1: bucketizing
     - method 2: use similarity measure such as a RBF
+- When the target variable is scaled, the model’s predictions need to be transformed back to the original scale
+    - Instead of manually applying the inverse transformation, you can use 'TransformedTargetRegressor' to handle this automatically
