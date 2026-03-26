@@ -31,3 +31,4 @@ avoid simple weighted sums of existing features.
 - write a custom class to make my custom transformer to be trainable, learn some parameters in the 'fit()' method and using them later in the 'transform()' method
 - pipeline helps data transformation steps to be executed in the right order
     - support indexing (how can this be useful?)
+- most models prefer features with roughly uniform or normal distributions
