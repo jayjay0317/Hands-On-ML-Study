@@ -32,3 +32,5 @@ avoid simple weighted sums of existing features.
 - pipeline helps data transformation steps to be executed in the right order
     - support indexing (how can this be useful?)
 - most models prefer features with roughly uniform or normal distributions
+- cross-validation features expect a utility function (greater is better) rather than a cost function (lower is better), so the scoring function is actually the opposite of the RMSE
+    - it's a negative value, so you need to switch the sign of the output to get the RMSE scores
