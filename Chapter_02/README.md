@@ -34,3 +34,14 @@ avoid simple weighted sums of existing features.
 - most models prefer features with roughly uniform or normal distributions
 - cross-validation features expect a utility function (greater is better) rather than a cost function (lower is better), so the scoring function is actually the opposite of the RMSE
     - it's a negative value, so you need to switch the sign of the output to get the RMSE scores
+- Optimization: Model and Evaluation Caching
+
+Performing 10 fold cross validation on a Random Forest model is a highly computationally expensive and time         consuming process. To resolve this and maximize development efficiency, I implemented a serialization and caching     pipeline utilizing the joblib library.
+
+Problem: Rerunning the entire Jupyter Notebook repeatedly executes the heavy pipeline training and validation steps, which significantly disrupts the development workflow.
+
+Solution: During the initial execution, the fully trained model object and the cross validation results array are saved directly to the hard drive as .pkl files using the joblib.dump function.
+
+Impact: For all subsequent runs, a conditional statement verifies the existence of these saved files. If present, they are instantly loaded into memory via joblib.load. This completely eliminates unnecessary computation wait times, allowing for an immediate transition into the hyperparameter tuning phase.
+
+-
