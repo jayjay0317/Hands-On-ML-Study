@@ -44,4 +44,6 @@ Solution: During the initial execution, the fully trained model object and the c
 
 Impact: For all subsequent runs, a conditional statement verifies the existence of these saved files. If present, they are instantly loaded into memory via joblib.load. This completely eliminates unnecessary computation wait times, allowing for an immediate transition into the hyperparameter tuning phase.
 
--
+- Wrapping preprocessing steps in a Scikit-Learn pipeline allows you
+ to tune the preprocessing hyperparameters along with the model
+ hyperparameters.
