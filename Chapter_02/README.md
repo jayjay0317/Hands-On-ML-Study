@@ -47,3 +47,5 @@ Impact: For all subsequent runs, a conditional statement verifies the existence 
 - Wrapping preprocessing steps in a Scikit-Learn pipeline allows you
  to tune the preprocessing hyperparameters along with the model
  hyperparameters.
+
+- can set the pipeline's memory parameter to the path of a caching directory if fitting the pipeline transformers is computationally expensive
