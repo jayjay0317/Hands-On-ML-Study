@@ -49,3 +49,5 @@ Impact: For all subsequent runs, a conditional statement verifies the existence 
  hyperparameters.
 
 - can set the pipeline's memory parameter to the path of a caching directory if fitting the pipeline transformers is computationally expensive
+
+- important to check model fairness
