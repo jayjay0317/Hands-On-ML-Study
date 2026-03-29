@@ -51,3 +51,15 @@ Impact: For all subsequent runs, a conditional statement verifies the existence 
 - can set the pipeline's memory parameter to the path of a caching directory if fitting the pipeline transformers is computationally expensive
 
 - important to check model fairness
+
+- **Bidirectional Nature of RMSE:**
+  The final RMSE of approximately $41,500 represents the absolute magnitude of the error. Objectively, this means our predictions carry a bidirectional volatility, potentially overestimating or underestimating the actual house prices by an average of $40,000.
+
+- **Risk Control via Confidence Intervals:**
+  Rather than relying on a single point estimate, a 95% confidence interval (approx. $39K to $43K) was computed using the bootstrap method. This mathematically bounds and verifies the best and worst error scenarios the model might face in a production environment.
+
+- **Business Limitations & Critical Evaluation:**
+  Although the test set evaluation demonstrated stable generalization without overfitting, a $40,000 variance poses a significant financial risk in real estate transactions. From a critical business perspective, this current error margin limits the feasibility of immediate commercial deployment.
+
+- **Future Work:**
+  Future iterations will incorporate residual analysis to visually verify directional bias (e.g., whether the model consistently overprices or underprices homes). Furthermore, implementing advanced feature engineering and more powerful algorithms like XGBoost or LightGBM will be necessary to narrow the error margin to practical industry standards.
