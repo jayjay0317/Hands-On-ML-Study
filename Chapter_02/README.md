@@ -69,10 +69,17 @@ must first import any custom classes and functions the model relies on (which me
 transferring the code to production), then load the model using joblib and use it to
 make predictions
 
--  you can wrap the model within a dedicated web service that your web application can query through a REST API
-    - This makes
-it easier to upgrade your model to new versions without interrupting the main appli!
-cation. It also simplifies scaling, since you can start as many web services as needed
-and load-balance the requests coming from your web application across these web
-services. Moreover, it allows your web application to use any programming language,
-not just Python.
+- **Independent Web Service Deployment:**
+  Deploying the model as a standalone web service (e.g., via REST API) or on cloud platforms like Vertex AI is objectively more scalable. This architecture allows for seamless version upgrades and load balancing without interrupting the main application.
+
+- **Data Drift and Live Monitoring:**
+  Real-world data inevitably drifts from the training data over time. Deployment is not the final step; it requires continuous and critical monitoring of the model's live performance through downstream business metrics or human evaluation.
+
+- **End-to-End Pipeline Automation:**
+  As data continuously evolves, the entire machine learning lifecycle must be automated. This includes regularly collecting fresh data, retraining the model, evaluating it against the previous version, and deploying it automatically to maintain optimal performance.
+
+- **Input Data Quality Checks:**
+  It is crucial to detect anomalies in the input data before they degrade the model's predictions. Implementing defensive monitoring to catch malfunctioning sensors, statistical shifts, or newly introduced categorical values is an essential safeguard.
+
+- **Version Control and Rapid Rollbacks:**
+  Engineers must always prepare for the worst-case scenario where a new model or dataset introduces fatal errors. Maintaining strict backups of every model and dataset version ensures that the system can be instantly rolled back to a stable, previous state.
