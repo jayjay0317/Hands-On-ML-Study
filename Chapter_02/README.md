@@ -63,3 +63,8 @@ Impact: For all subsequent runs, a conditional statement verifies the existence 
 
 - **Future Work:**
   Future iterations will incorporate residual analysis to visually verify directional bias (e.g., whether the model consistently overprices or underprices homes). Furthermore, implementing advanced feature engineering and more powerful algorithms like XGBoost or LightGBM will be necessary to narrow the error margin to practical industry standards.
+
+- Once your model is transferred to production, you can load it and use it. For this you
+must first import any custom classes and functions the model relies on (which means
+transferring the code to production), then load the model using joblib and use it to
+make predictions
