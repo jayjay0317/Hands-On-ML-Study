@@ -68,3 +68,11 @@ Impact: For all subsequent runs, a conditional statement verifies the existence 
 must first import any custom classes and functions the model relies on (which means
 transferring the code to production), then load the model using joblib and use it to
 make predictions
+
+-  you can wrap the model within a dedicated web service that your web application can query through a REST API
+    - This makes
+it easier to upgrade your model to new versions without interrupting the main appli!
+cation. It also simplifies scaling, since you can start as many web services as needed
+and load-balance the requests coming from your web application across these web
+services. Moreover, it allows your web application to use any programming language,
+not just Python.
