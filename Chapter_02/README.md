@@ -1,8 +1,14 @@
 # Chapter 2: End-to-End Machine Learning Project
 ## 💡 Key Takeaways
-- **Automating Data Pipelines:** I learned the importance of fetching data through code rather than manual downloads. This approach ensures reproducibility and makes the entire modelling pipeline easily updatable when new data arrives.
-
-- **Statistical Foundations in Model Evaluation:** Choosing between RMSE and MAE is a mathematical decision rather than a simple coding step. Recognizing how RMSE heavily penalizes outliers (L2 norm) compared to MAE (L1 norm) reinforced the necessity of analyzing the underlying data distribution before evaluating model performance.
+* **Automating Data Pipelines:** I learned the importance of fetching data through code rather than manual downloads. This approach ensures reproducibility and makes the entire modelling pipeline easily updatable when new data arrives.
+* **Statistical Foundations in Model Evaluation:** Choosing between RMSE and MAE is a mathematical decision rather than a simple coding step. Recognizing how RMSE heavily penalizes outliers (L2 norm) compared to MAE (L1 norm) reinforced the necessity of analyzing the underlying data distribution before evaluating model performance.
+* **Optimization via Model & Evaluation Caching:** Performing 10-fold cross-validation on complex models is highly computationally expensive. To maximize development efficiency, I implemented a serialization and caching pipeline utilizing `joblib`. Saving the fully trained model and CV results directly to disk eliminates unnecessary computation times on subsequent runs, accelerating the hyperparameter tuning phase.
+* **Bidirectional Nature of RMSE:** The final RMSE of approximately 41,500 USD represents the absolute magnitude of the error. Objectively, this means our predictions carry a bidirectional volatility, potentially overestimating or underestimating actual house prices by an average of 40,000 USD.
+* **Risk Control via Confidence Intervals:** Rather than relying on a single point estimate, a 95% confidence interval (approx. 39,000 USD to 43,000 USD) was computed using the bootstrap method. This mathematically bounds and verifies the best and worst error scenarios the model might face in a production environment.
+* **Business Limitations & Critical Evaluation:** Although the test set evaluation demonstrated stable generalization without overfitting, a 40,000 USD variance poses a significant financial risk in real estate transactions. From a critical business perspective, this current error margin limits the feasibility of immediate commercial deployment.
+* **Independent Web Service Deployment:** Deploying the model as a standalone web service (e.g., via REST API) or on cloud platforms like Vertex AI is objectively more scalable. This architecture allows for seamless version upgrades and load balancing without interrupting the main application.
+* **End-to-End Pipeline Automation & Monitoring:** Real-world data inevitably drifts over time. Therefore, the ML lifecycle must be automated to regularly collect fresh data, retrain, and monitor live performance. Crucially, input data quality checks must be implemented to catch malfunctioning sensors or statistical shifts before they degrade predictions.
+* **Future Work:** Future iterations will incorporate residual analysis to visually verify directional bias. Implementing advanced feature engineering and powerful algorithms like XGBoost or LightGBM will be necessary to narrow the error margin to practical industry standards.
 
 ## 🧠 Self-Reflection & Insights
 
