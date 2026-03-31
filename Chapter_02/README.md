@@ -11,6 +11,16 @@
 * **Future Work:** Future iterations will incorporate residual analysis to visually verify directional bias. Implementing advanced feature engineering and powerful algorithms like XGBoost or LightGBM will be necessary to narrow the error margin to practical industry standards.
 
 ## 🧠 Self-Reflection & Insights
+* **Robust Test Set Generation:** Utilizing stratified sampling is critical. It preserves the underlying population distribution, significantly reducing sampling bias compared to purely random splits.
+* **Strict Data Isolation (Data Snooping):** Exploratory data analysis and imputation/scaling must be strictly confined to the training set. Leaking test set information compromises the objectivity of the final evaluation.
+* **Feature Engineering Caveats:** When creating combined features, it is vital to check for linear correlation. High collinearity (e.g., simple weighted sums) can destabilize models like Linear Regression.
+* **Scikit-Learn Mechanics & Data Structures:**
+  * Transformers inherently output NumPy arrays to ensure high-performance matrix operations.
+  * Pandas `drop()` creates a copy, preserving the integrity of the original dataset.
+  * `OneHotEncoder` outputs a SciPy sparse matrix to optimize memory when dealing with numerous dummy attributes, and it safely remembers the categories it was trained on.
+
+
+
 
 - test set generation - stratified sampling (add more later ex. why it reduces bias)
 - Each splitter has a split() method that returns an iterator over different training/
