@@ -30,10 +30,18 @@ To run the Jupyter Notebooks locally, ensure you have the required libraries ins
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+git clone https://github.com/your-username/your-repo-name.git
 
 # Navigate to the project directory
 cd your-repo-name
 
 # Install dependencies
 pip install -r requirements.txt
+```
+## 📚 Acknowledgments & References
+
+This repository and the end-to-end pipelines constructed within it are heavily inspired by and based on the core teachings from:
+
+* **Hands-On Machine Learning with Scikit-Learn and PyTorch by Aurélien Géron
+
+The statistical concepts, code architectures, and MLOps principles applied throughout these chapters serve as a practical application of the foundational knowledge provided in this comprehensive textbook.
