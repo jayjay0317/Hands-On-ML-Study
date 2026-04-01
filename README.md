@@ -27,7 +27,7 @@ To run the Jupyter Notebooks locally, ensure you have the required libraries ins
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/jayjay0317/Hands-On-ML-Study.git)
+git clone https://github.com/jayjay0317/Hands-On-ML-Study.git
 
 # Navigate to the project directory
 cd Hands-On-ML-Study
