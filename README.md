@@ -1,4 +1,4 @@
-# 🚀 Machine Learning Portfolio
+# 🚀 Machine Learning Study Archive
 
 Welcome to my Machine Learning portfolio repository. This project documents my journey of mastering machine learning concepts, building end-to-end data pipelines, and applying practical MLOps principles.
 
