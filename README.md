@@ -39,6 +39,6 @@ pip install -r requirements.txt
 
 This repository and the end-to-end pipelines constructed within it are heavily inspired by and based on the core teachings from:
 
-* **Hands-On Machine Learning with Scikit-Learn and PyTorch** by *Aurélien Géron*
+* **Hands-On Machine Learning with Scikit-Learn and PyTorch** by _Aurélien Géron_
 
 The statistical concepts, code architectures, and MLOps principles applied throughout these chapters serve as a practical application of the foundational knowledge provided in this comprehensive textbook.
