@@ -1,6 +1,3 @@
-# Hands-On-ML-Study
-Learning and implementing machine learning fundamentals based on *Hands-On Machine Learning with Scikit-Learn and PyTorch* by Aurélien Géron, with a focus on hands-on practice, experimentation, and problem-solving.
-
 # 🚀 Machine Learning Portfolio
 
 Welcome to my Machine Learning portfolio repository. This project documents my journey of mastering machine learning concepts, building end-to-end data pipelines, and applying practical MLOps principles.
