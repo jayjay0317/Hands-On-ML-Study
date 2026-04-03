@@ -10,7 +10,7 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | :--- | :--- | :---: | :---: |
 | **Chapter 1** | The Machine Learning Landscape | [📝 Notebook](Chapter_01/01_practice.ipynb) | [📖 README](Chapter_01/README.md) |
 | **Chapter 2** | End-to-End Machine Learning Project | [📝 Notebook](Chapter_02/02_housing_learning.ipynb) | [📖 README](Chapter_02/README.md) |
-| **Chapter 3** | Classification | [📝 Notebook](Chapter_03/03_classification.ipynb) | [📖 README](./chapter_3/README.md) |
+| **Chapter 3** | Classification | [📝 Notebook](Chapter_03/03_classification.ipynb) | [📖 README](Chapter_03/README.md) |
 | **Chapter 4** | Training Models | [📝 Notebook](./chapter_4/chapter_4.ipynb) | [📖 README](./chapter_4/README.md) |
 
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
