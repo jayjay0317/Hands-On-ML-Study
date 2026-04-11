@@ -21,3 +21,5 @@
           It then sorts these scores and uses them as potential threshold values.
           Each unique score represents a point where the model’s predictions can change.
 - the ROC curve plots the true positive rate against the false positive rate
+    - again there is a trade off between TPR and FPR
+- one way to compare classifiers is to measure the auc
