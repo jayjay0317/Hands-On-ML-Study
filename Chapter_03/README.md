@@ -24,3 +24,4 @@
     - again there is a trade off between TPR and FPR
 - one way to compare classifiers is to measure the auc
 -  As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives
+    - The ROC curve can be misleading because the negative class is so large that the false positive rate remains              artificially low, even when the model produces a significant number of false positives.
