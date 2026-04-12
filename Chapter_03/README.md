@@ -28,3 +28,4 @@
     - The ROC curve can be misleading because the negative class is so large that the false positive rate remains              artificially low, even when the model produces a significant number of false positives.
 - the model's estimated probabilities can be much lower or overconfident than the actual probabilities
   - the *CalibratedClassifierCV* class from the *sklearn.calibration* package can calibrate the estimated probabilities           using cross-validation, making them much closer to actual probabilties
+- predict_proba() uses a 0.5 probability threshold, while decision_function() uses a 0 score threshold
