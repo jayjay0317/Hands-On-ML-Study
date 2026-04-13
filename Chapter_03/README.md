@@ -29,3 +29,6 @@
 - the model's estimated probabilities can be much lower or overconfident than the actual probabilities
   - the *CalibratedClassifierCV* class from the *sklearn.calibration* package can calibrate the estimated probabilities           using cross-validation, making them much closer to actual probabilties
 - predict_proba() uses a 0.5 probability threshold, while decision_function() uses a 0 score threshold
+- OvO needs to train N * (N - 1) / 2 classifiers but each classifier only needs to be trained on the part of the training set containing the two classes that it must distinguish
+    - some algorithms (such as SVM) scale poorly with the size of the training set so OvO is preferred
+    - most binary classification algorithms prefer OvR
