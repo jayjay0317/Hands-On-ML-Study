@@ -32,3 +32,4 @@
 - OvO needs to train N * (N - 1) / 2 classifiers but each classifier only needs to be trained on the part of the training set containing the two classes that it must distinguish
     - some algorithms (such as SVM) scale poorly with the size of the training set so OvO is preferred
     - most binary classification algorithms prefer OvR
+- Why use standardscaler on x_train (pixel brightness) increases accuracy?
