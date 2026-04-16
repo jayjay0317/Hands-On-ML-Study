@@ -33,5 +33,5 @@
     - some algorithms (such as SVM) scale poorly with the size of the training set so OvO is preferred
     - most binary classification algorithms prefer OvR
     - In what situations would you prefer OVO or OVR?
-- Why use standardscaler on x_train (pixel brightness) increases accuracy?
+- How does using standardscaler on x_train (pixel brightness) increase accuracy?
 - Data augmentation forces the model to learn to be more tolerant to variations
