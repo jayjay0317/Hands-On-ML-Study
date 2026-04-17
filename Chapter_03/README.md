@@ -35,3 +35,4 @@
     - In what situations would you prefer OVO or OVR?
 - How does using standardscaler on x_train (pixel brightness) increase accuracy?
 - Data augmentation forces the model to learn to be more tolerant to variations
+- macro f1 score vs weighted(?) f1 score in multilabel classification
