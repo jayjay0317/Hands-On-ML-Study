@@ -36,3 +36,9 @@
 - How does using standardscaler on x_train (pixel brightness) increase accuracy?
 - Data augmentation forces the model to learn to be more tolerant to variations
 - macro f1 score vs weighted(?) f1 score in multilabel classification
+- If you wish to use a classifier that does not natively support multilabel classification,
+    such as SVC, one possible strategy is to train one model per label. However, this
+    strategy may have a hard time capturing the dependencies between the labels.
+    - To solve this issue, the models can be organized in a chain: when a model
+      makes a prediction, it uses the input features plus all the predictions of the models
+      that come before it in the chain.
