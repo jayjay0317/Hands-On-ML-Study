@@ -42,3 +42,4 @@
     - To solve this issue, the models can be organized in a chain: when a model
       makes a prediction, it uses the input features plus all the predictions of the models
       that come before it in the chain.
+      - Using true labels during training may seem beneficial because the model learns from perfect information.             However, in a classifier chain, this creates a mismatch between training and testing. During training, each           model receives correct previous labels, while during testing it must rely on predicted (and possibly                   incorrect) labels. This leads to error propagation and overly optimistic learning conditions. As a result,           the model does not learn to handle its own prediction errors, which can hurt performance in practice. Using           cross-validation predictions instead (cv=True) makes training more realistic by simulating these errors,               leading to better generalization.
