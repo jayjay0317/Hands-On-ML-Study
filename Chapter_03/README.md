@@ -1,6 +1,12 @@
 # Chapter 3: Classification
 ## 💡 Key Takeaways
 
+- **Classification Fundamentals** Differentiating between categorical predictions and continuous value regression using the MNIST dataset as the foundational baseline.
+- **Training Dynamics** Utilizing Stochastic Gradient Descent (SGD) which processes training instances independently making it highly suitable for online learning systems.
+- **Multiclass Strategies** Understanding how algorithms handle multiple classes. OvO trains multiple binary classifiers on small data subsets which is ideal for algorithms that scale poorly like SVM. OvR trains one model per class and serves as the default for most other algorithms.
+- **Advanced Classification** Expanding beyond single targets to Multilabel classification (outputting multiple binary tags) and Multioutput classification (predicting multiple multiclass labels such as denoising individual image pixels).
+- **Establishing Baselines** Implementing Dummy Classifiers to set a performance floor ensuring the trained model is genuinely learning patterns rather than simply guessing the most frequent class.
+
 ## 🧠 Self-Reflection & Insights
 
 - Difference between Classification vs Regression
