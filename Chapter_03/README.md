@@ -9,43 +9,10 @@
 
 ## 🧠 Self-Reflection & Insights
 
-- Difference between Classification vs Regression
-- Characteristics of MNIST dataset
-- sgd deals with training instances independently, one at a time, which makes it well suited for online learning
-- accuracy is generally not the preferred performance measure for classifiers, especially when you are dealing with skewed datasets (why?)
-  - confusion matrix (not only 2x2)
-- precision is typically used along with recall
-    - precision/recall trade off: increasing the threshold increases precision but reduces recall, and vice versa.
-        - high precision or high recall is preferred depending on contexts
-- f1 score: convenient when you need a single metric to compare two classifiers
-- precision_recall_curve:
-    - The precision and recall arrays contain one more value than the thresholds because they include the values at both        ends of the threshold range.
-        - The thresholds array has n values (decision boundaries where the model’s prediction changes).
-          But these thresholds create n + 1 intervals
-    - Thresholds come from the model’s decision scores
-        - The function precision_recall_curve collects the decision scores produced by the model.
-          It then sorts these scores and uses them as potential threshold values.
-          Each unique score represents a point where the model’s predictions can change.
-- the ROC curve plots the true positive rate against the false positive rate
-    - again there is a trade off between TPR and FPR
-- one way to compare classifiers is to measure the auc
-    - AUC can also be used on precision-recall curves
--  As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives
-    - The ROC curve can be misleading because the negative class is so large that the false positive rate remains              artificially low, even when the model produces a significant number of false positives.
-- the model's estimated probabilities can be much lower or overconfident than the actual probabilities
-  - the *CalibratedClassifierCV* class from the *sklearn.calibration* package can calibrate the estimated probabilities           using cross-validation, making them much closer to actual probabilties
-- predict_proba() uses a 0.5 probability threshold, while decision_function() uses a 0 score threshold
-- OvO needs to train N * (N - 1) / 2 classifiers but each classifier only needs to be trained on the part of the training set containing the two classes that it must distinguish
-    - some algorithms (such as SVM) scale poorly with the size of the training set so OvO is preferred
-    - most binary classification algorithms prefer OvR
-    - In what situations would you prefer OVO or OVR?
-- How does using standardscaler on x_train (pixel brightness) increase accuracy?
-- Data augmentation forces the model to learn to be more tolerant to variations
-- macro f1 score vs weighted(?) f1 score in multilabel classification
-- If you wish to use a classifier that does not natively support multilabel classification,
-    such as SVC, one possible strategy is to train one model per label. However, this
-    strategy may have a hard time capturing the dependencies between the labels.
-    - To solve this issue, the models can be organized in a chain: when a model
-      makes a prediction, it uses the input features plus all the predictions of the models
-      that come before it in the chain.
-      - Using true labels during training may seem beneficial because the model learns from perfect information.             However, in a classifier chain, this creates a mismatch between training and testing. During training, each           model receives correct previous labels, while during testing it must rely on predicted (and possibly                   incorrect) labels. This leads to error propagation and overly optimistic learning conditions. As a result,           the model does not learn to handle its own prediction errors, which can hurt performance in practice. Using           cross-validation predictions instead (cv=True) makes training more realistic by simulating these errors,               leading to better generalization.
+- **The Illusion of Accuracy:** Accuracy is fundamentally flawed when dealing with skewed datasets. A model predicting "not 5" on MNIST easily achieves 90 percent accuracy. True performance evaluation strictly requires the Confusion Matrix, Precision, and Recall.
+- **Navigating the Precision Recall Trade off:** Increasing the decision threshold inherently boosts precision while degrading recall. The optimal balance depends entirely on the business context whether prioritizing high precision (safe content filtering) or high recall (fraud detection). The F1 score offers a harmonic mean for convenient model comparison.
+- **Choosing the Right Evaluation Curve:** While the ROC curve plots the True Positive Rate against the False Positive Rate it can be dangerously misleading if the negative class is massive. The PR curve is the objectively superior choice whenever the positive class is rare or when false positives carry more weight than false negatives.
+- **Mathematical Stability via Scaling:** Applying StandardScaler to pixel brightness drastically improves the mathematical convergence of gradient descent algorithms allowing linear models to find optimal solutions faster.
+- **Preventing Error Propagation in Classifier Chains:** When building multilabel models using ClassifierChain training with true labels creates a mismatch with testing conditions. Using cross validation predictions during training forces the model to learn how to handle its own errors leading to significantly better real world generalization.
+- **Probability Calibration:** A model's raw output scores might be overconfident. Utilizing tools like CalibratedClassifierCV ensures these estimated probabilities closely reflect actual real world likelihoods.
+- **Robustness through Data Augmentation:** Artificially shifting or rotating training images forces the model to learn spatial tolerance reducing overfitting and improving performance on poorly centered data.
