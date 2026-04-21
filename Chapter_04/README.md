@@ -12,3 +12,4 @@
 - gradient descent:
   - better suited for cases where there are a large number of features or too many training instances to fit in memory
   - There may be holes, ridges, plateaus, and all sorts of irregular terrain in the cost function, making convergence to     the minimum difficult.
+  - ensure that all features have a similar scale, or else it will take much longer to converge
