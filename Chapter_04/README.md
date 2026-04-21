@@ -15,3 +15,4 @@
   - ensure that all features have a similar scale, or else it will take much longer to converge
   - you can use grid search to find a good learning rate
   - batch gradient descent is terribly slow on very large training sets but gradient descent scales well with the number     of features
+  - set a very large number of epochs and interrupt the algorithm when the gradient vector's norm becomes smaller than       the tolerance
