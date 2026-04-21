@@ -14,3 +14,4 @@
   - There may be holes, ridges, plateaus, and all sorts of irregular terrain in the cost function, making convergence to     the minimum difficult.
   - ensure that all features have a similar scale, or else it will take much longer to converge
   - you can use grid search to find a good learning rate
+  - batch gradient descent is terribly slow on very large training sets but gradient descent scales well with the number     of features
