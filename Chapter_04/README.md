@@ -17,3 +17,4 @@
   - batch gradient descent is terribly slow on very large training sets but gradient descent scales well with the number     of features
   - set a very large number of epochs and interrupt the algorithm when the gradient vector's norm becomes smaller than       the tolerance
   - stochastic gradient descent can jump out of local minima
+  - Q: why use number of epochs when sgd picks a random instance every step? (each epoch doesn't mean every instance has been used exactly once)
