@@ -18,3 +18,4 @@
   - set a very large number of epochs and interrupt the algorithm when the gradient vector's norm becomes smaller than       the tolerance
   - stochastic gradient descent can jump out of local minima
   - Q: why use number of epochs when sgd picks a random instance every step? (each epoch doesn't mean every instance has been used exactly once)
+  - Without shuffling, SGD processes correlated (e.g., label-sorted) data in sequence, producing biased gradients that prevent stable convergence to the global optimum.
