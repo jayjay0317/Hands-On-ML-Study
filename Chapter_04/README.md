@@ -19,3 +19,4 @@
   - stochastic gradient descent can jump out of local minima
   - Q: why use number of epochs when sgd picks a random instance every step? (each epoch doesn't mean every instance has been used exactly once)
   - Without shuffling, SGD processes correlated (e.g., label-sorted) data in sequence, producing biased gradients that prevent stable convergence to the global optimum.
+  - mini-batch GD will end up walking around a bit closer to the minimum than stochastic GD—but it may be harder for it to escape from local minima
