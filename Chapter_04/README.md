@@ -21,3 +21,5 @@
   - Without shuffling, SGD processes correlated (e.g., label-sorted) data in sequence, producing biased gradients that prevent stable convergence to the global optimum.
   - mini-batch GD will end up walking around a bit closer to the minimum than stochastic GD—but it may be harder for it to escape from local minima
 - Polynomial regression: Adding powers of features creates nonlinear patterns in the input space, but the model remains linear because it is still a linear combination of the transformed features (linear in the parameters).
+- Lasso regression automatically performs feature selection and outputs a sparse model
+with few nonzero feature weights
