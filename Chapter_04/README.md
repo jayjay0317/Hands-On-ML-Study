@@ -24,3 +24,4 @@
 - It is critical to scale the data using StandardScaler before applying any regularization because these algorithms are highly sensitive to the scale of the input features
 - Lasso regression automatically performs feature selection and outputs a sparse model
 with few nonzero feature weights
+- Lagrange multiplier in understanding the difference between ridge, lasso regression
