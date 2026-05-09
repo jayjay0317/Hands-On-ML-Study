@@ -20,6 +20,7 @@
   - Q: why use number of epochs when sgd picks a random instance every step? (each epoch doesn't mean every instance has been used exactly once)
   - Without shuffling, SGD processes correlated (e.g., label-sorted) data in sequence, producing biased gradients that prevent stable convergence to the global optimum.
   - mini-batch GD will end up walking around a bit closer to the minimum than stochastic GD—but it may be harder for it to escape from local minima
+- fit vs partial_fit
 - Polynomial regression: Adding powers of features creates nonlinear patterns in the input space, but the model remains linear because it is still a linear combination of the transformed features (linear in the parameters).
 - It is critical to scale the data using StandardScaler before applying any regularization because these algorithms are highly sensitive to the scale of the input features
 - Lasso regression automatically performs feature selection and outputs a sparse model
