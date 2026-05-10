@@ -40,3 +40,8 @@ The ultimate takeaway for production environments is clear. Algorithm selection 
 - Logistic regression is a special case of softmax regression for binary classification.
     - The logistic function is a special case of the softmax function when the number of classes is two.
     - When there are just two classes, the cross entropy cost function is equivalent to the logistic regression cost function
+
+- Simultaneous Update of the Parameter Matrix ($\Theta$)In Softmax Regression, the parameter matrix $\Theta$ (where each row $\theta_j^T$ represents the parameter vector for class $j$) is updated simultaneously. The model does not iterate through rows sequentially; instead, it treats the matrix as a single entity.
+    - we compute the gradient of the loss function $J(\Theta)$ with respect to the entire matrix. This results in a gradient matrix $\nabla_{\Theta} J(\Theta)$ of the same dimensions as $\Theta$.
+    - The Unified Update RuleThe parameters are updated using a single matrix operation:$$\Theta_{new} = \Theta_{old} - \eta \cdot \nabla_{\Theta} J(\Theta)$$Because this is a vectorized operation, every element in every row of $\Theta$ is adjusted in parallel.
+    - In short: The update is simultaneous. The algorithm looks at the "error" across all classes at once and shifts the entire matrix $\Theta$ one step toward the minimum in the high-dimensional parameter space.
