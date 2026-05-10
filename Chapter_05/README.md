@@ -19,3 +19,13 @@ lar class k
   - First it traverses the tree to find the leaf node for this instance, and then it returns the proportion of
     instances of class k among the training instances that would also reach this leaf node.
 
+- How CART algorithm splits the training set into two subsets:
+  - using a single feature k and a threshold tk
+  - searches for the pair (k, tk) that produces the purest subsets, weighted by their size
+    -> A child node can have higher impurity than the parent node, but the weighted impurity of the two child nodes is lower than that of the parent node.
+
+-  the CART algorithm is a greedy algorithm:  it greedily searches for an optimum split at the top level, then repeats the process at each subsequent level.
+    - does not check whether the split will lead to the lowest possible impurity several levels down.
+    - often produces a solution that’s reasonably good but not guaranteed to be optimal.
+    - what about ensemble algorithms like randomforest? is it a greedy algorithm?
+
