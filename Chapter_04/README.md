@@ -36,3 +36,6 @@ Given that the true underlying data generation function was quadratic $y = 0.5x^
 This mathematically proves a fundamental machine learning principle. The linear models were strictly constrained by their one dimensional perspective resulting in high bias regardless of which sophisticated regularization algorithm was applied. Conversely the Early Stopping model utilized polynomial features allowing it to understand the true curvature of the data before optimization even began.
 
 The ultimate takeaway for production environments is clear. Algorithm selection and hyperparameter tuning can only optimize the information provided. Transforming the data space to reflect reality through rigorous feature engineering is fundamentally more impactful for reducing error than merely swapping algorithms.
+
+- Logistic regression is a special case of softmax regression for binary classification.
+    - The logistic function is a special case of the softmax function when the number of classes is two.
