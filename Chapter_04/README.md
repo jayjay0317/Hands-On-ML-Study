@@ -39,3 +39,4 @@ The ultimate takeaway for production environments is clear. Algorithm selection 
 
 - Logistic regression is a special case of softmax regression for binary classification.
     - The logistic function is a special case of the softmax function when the number of classes is two.
+    - When there are just two classes, the cross entropy cost function is equivalent to the logistic regression cost function
