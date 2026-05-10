@@ -29,5 +29,12 @@ lar class k
     - often produces a solution that’s reasonably good but not guaranteed to be optimal.
     - what about ensemble algorithms like randomforest? is it a greedy algorithm?
 
+- decision trees is a nonparametric model
+    - the number of parameters is not determined prior to training, which increases the risk of overfitting
+     - regularize the model by:
+         - increasing min_* hyperparameters or ccp_alpha or
+         - decreasing max_* hyperparameters
+      - ccp_alpha is the complexity parameter that controls post-pruning by removing branches whose improvement is smaller than the penalty value.
+
 - Both thermodynamic entropy and decision tree entropy measure uncertainty or disorder using similar logarithmic ideas.
 The difference is that thermodynamic entropy describes physical states in nature, while decision tree entropy measures uncertainty in data classification and information.
