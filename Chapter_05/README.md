@@ -29,3 +29,5 @@ lar class k
     - often produces a solution that’s reasonably good but not guaranteed to be optimal.
     - what about ensemble algorithms like randomforest? is it a greedy algorithm?
 
+- Both thermodynamic entropy and decision tree entropy measure uncertainty or disorder using similar logarithmic ideas.
+The difference is that thermodynamic entropy describes physical states in nature, while decision tree entropy measures uncertainty in data classification and information.
