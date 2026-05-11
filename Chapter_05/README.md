@@ -43,3 +43,7 @@ The difference is that thermodynamic entropy describes physical states in nature
 sion only works well with linear data, decision trees can fit all sorts of complex
 datasets.
 
+- In decision tree regressions, predicted value for each region is always the average target value of the instances in that region.
+  - The CART algorithm works as described earlier, except that instead of trying to split
+    the training set in a way that minimizes impurity, it now tries to split the training
+    set in a way that minimizes the MSE.
