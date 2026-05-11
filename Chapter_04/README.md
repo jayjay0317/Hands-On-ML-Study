@@ -8,46 +8,8 @@
 
 
 ## 🧠 Self-Reflection & Insights
-- two different ways to train a linear regression model:
-  1. using a closed-form equation (normal equation)
-  2. using gradient descent
-- scikit-learn LinearRegression solves the least-squares problem using an SVD-based method (lstsq), which is
-  mathematically equivalent to using the Moore–Penrose pseudoinverse.
-  - This approach always works (even when the matrix is singular or non-invertible), unlike the normal equation which can fail when X^T X is not invertible.
-- The Normal Equation becomes computationally expensive as the number of features increases because it requires inverting an (n+1)×(n+1) matrix, with complexity around O(n^2.4 to n^3), meaning doubling features can increase computation time by about 5–8×, while Scikit-Learn’s SVD-based LinearRegression is more efficient with O(n^2) complexity, so doubling features increases time by about 4×
-- gradient descent:
-  - better suited for cases where there are a large number of features or too many training instances to fit in memory
-  - There may be holes, ridges, plateaus, and all sorts of irregular terrain in the cost function, making convergence to     the minimum difficult.
-  - ensure that all features have a similar scale, or else it will take much longer to converge
-  - you can use grid search to find a good learning rate
-  - batch gradient descent is terribly slow on very large training sets but gradient descent scales well with the number     of features
-  - set a very large number of epochs and interrupt the algorithm when the gradient vector's norm becomes smaller than       the tolerance
-  - stochastic gradient descent can jump out of local minima
-  - Q: why use number of epochs when sgd picks a random instance every step? (each epoch doesn't mean every instance has been used exactly once)
-  - Without shuffling, SGD processes correlated (e.g., label-sorted) data in sequence, producing biased gradients that prevent stable convergence to the global optimum.
-  - mini-batch GD will end up walking around a bit closer to the minimum than stochastic GD—but it may be harder for it to escape from local minima
-- fit vs partial_fit
-- Polynomial regression: Adding powers of features creates nonlinear patterns in the input space, but the model remains linear because it is still a linear combination of the transformed features (linear in the parameters).
-- It is critical to scale the data using StandardScaler before applying any regularization because these algorithms are highly sensitive to the scale of the input features
-- Lasso regression automatically performs feature selection and outputs a sparse model
-with few nonzero feature weights
-- Lagrange multiplier in understanding the difference between ridge, lasso regression
-
-### Engineering Insight Feature Engineering Over Algorithm Tuning
-
-During the evaluation of our models a critical discrepancy was observed when predicting the value for X 1.5. The purely linear regularized models Ridge Lasso and Elastic Net consistently predicted values around 5.0. However the Early Stopping model predicted approximately 4.12. 
-
-Given that the true underlying data generation function was quadratic $y = 0.5x^2 + x + 2$ the actual expected value mathematically is 4.625. The 4.12 prediction was significantly closer to reality.
-
-This mathematically proves a fundamental machine learning principle. The linear models were strictly constrained by their one dimensional perspective resulting in high bias regardless of which sophisticated regularization algorithm was applied. Conversely the Early Stopping model utilized polynomial features allowing it to understand the true curvature of the data before optimization even began.
-
-The ultimate takeaway for production environments is clear. Algorithm selection and hyperparameter tuning can only optimize the information provided. Transforming the data space to reflect reality through rigorous feature engineering is fundamentally more impactful for reducing error than merely swapping algorithms.
-
-- Logistic regression is a special case of softmax regression for binary classification.
-    - The logistic function is a special case of the softmax function when the number of classes is two.
-    - When there are just two classes, the cross entropy cost function is equivalent to the logistic regression cost function
-
-- Simultaneous Update of the Parameter Matrix ($\Theta$)In Softmax Regression, the parameter matrix $\Theta$ (where each row $\theta_j^T$ represents the parameter vector for class $j$) is updated simultaneously. The model does not iterate through rows sequentially; instead, it treats the matrix as a single entity.
-    - we compute the gradient of the loss function $J(\Theta)$ with respect to the entire matrix. This results in a gradient matrix $\nabla_{\Theta} J(\Theta)$ of the same dimensions as $\Theta$.
-    - The Unified Update RuleThe parameters are updated using a single matrix operation:$$\Theta_{new} = \Theta_{old} - \eta \cdot \nabla_{\Theta} J(\Theta)$$Because this is a vectorized operation, every element in every row of $\Theta$ is adjusted in parallel.
-    - In short: The update is simultaneous. The algorithm looks at the "error" across all classes at once and shifts the entire matrix $\Theta$ one step toward the minimum in the high-dimensional parameter space.
+* **Feature Engineering Over Algorithm Tuning:** A critical experimental discrepancy was observed when predicting a target value for $x=1.5$. Linear regularized models continuously predicted around 5.0 while an Early Stopping model leveraging polynomial features predicted 4.12. Given the underlying true quadratic function $y = 0.5x^2 + x + 2$ the mathematical expectation was 4.625. This proves that resolving spatial constraints through rigorous feature engineering reduces bias far more effectively than merely swapping optimization algorithms.
+* **The Randomness in SGD:** Investigated the structural reason for using epochs in Stochastic Gradient Descent given its random sampling nature. While an epoch does not guarantee every instance is processed exactly once shuffling the data at the start of each epoch is fundamentally required to destroy sequential correlation and prevent biased gradient trajectories.
+* **Algorithmic Escapes:** Mini-batch GD provides a stable computational path near the global minimum but lacks the erratic variance of SGD that acts as a mathematical mechanism to escape local minima in non-convex cost functions.
+* **Incremental Learning:** Recognized the explicit operational difference between `fit` and `partial_fit`. Utilizing `partial_fit` is the definitive shortcut for out-of-core learning when the training dataset exceeds available RAM capacity.
+* **Geometric Intuition of Regularization:** The structural difference between Lasso and Ridge becomes perfectly clear when visualized in a 2D parameter space. Lasso imposes an $L_1$ penalty creating a diamond shaped constraint region with sharp corners resting directly on the axes. When the elliptical cost function expands to find the minimum it naturally hits these sharp corners first instantly reducing specific feature weights to exactly zero and achieving true sparsity. Ridge imposes an $L_2$ penalty creating a perfectly circular constraint region. The cost function intersects this smooth boundary without favoring the axes meaning weights shrink globally but rarely disappear entirely. This geometric reality perfectly explains why Lasso is a natural feature selector while Ridge acts as a global weight suppressor.
