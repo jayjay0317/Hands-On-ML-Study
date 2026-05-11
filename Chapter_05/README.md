@@ -38,3 +38,8 @@ lar class k
 
 - Both thermodynamic entropy and decision tree entropy measure uncertainty or disorder using similar logarithmic ideas.
 The difference is that thermodynamic entropy describes physical states in nature, while decision tree entropy measures uncertainty in data classification and information.
+
+- Decision trees are also capable of performing regression tasks. While linear regres!
+sion only works well with linear data, decision trees can fit all sorts of complex
+datasets.
+
