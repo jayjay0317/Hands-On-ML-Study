@@ -67,3 +67,5 @@ significantly. Such an ensemble of trees is called a random forest
 - Practical Tuning Strategy: While Scikit-Learn provides numerous regularization parameters tuning all of them simultaneously is an anti pattern that leads to severe computational waste and geometric redundancy. For example restricting max_depth and max_leaf_nodes often yield mathematically overlapping constraints.
     -In production environments the most computationally efficient and elegant optimization strategy involves a two step process. First apply pre pruning by strictly tuning max_depth to prevent initial overgrowth and min_samples_leaf to prevent isolated noise from forming independent leaves. Second apply post pruning by tuning ccp_alpha to statistically trim away unnecessary branches using tests like the chi squared test. This targeted approach prevents the curse of dimensionality during hyperparameter search while ensuring a highly generalized model.
 
+- Scikit Learn's decision tree algorithms natively support missing values, no need for an imputer
+    - how does it work?
