@@ -12,6 +12,7 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | **Chapter 2** | End-to-End Machine Learning Project | [📝 Notebook](Chapter_02/02_housing_learning.ipynb) | [📖 README](Chapter_02/README.md) |
 | **Chapter 3** | Classification | [📝 Notebook](Chapter_03/03_classification.ipynb) | [📖 README](Chapter_03/README.md) |
 | **Chapter 4** | Training Models | [📝 Notebook](Chapter_04/04_training_models.ipynb) | [📖 README](Chapter_04/README.md) |
+| **Chapter 5** | Decision Trees | [📝 Notebook](Chapter_05/05_decision_trees.ipynb) | [📖 README](Chapter_05/README.md) |
 
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
 
