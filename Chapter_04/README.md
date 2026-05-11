@@ -1,10 +1,10 @@
 # Chapter 4: Training Models
 ## 💡 Key Takeaways
-* **Linear Regression Optimization** The Normal Equation requires inverting an $(n+1) \times (n+1)$ matrix with a computational complexity of $O(n^{2.4})$ to $O(n^3)$. Scikit-Learn employs an SVD-based pseudoinverse approach which operates at $O(n^2)$ complexity and successfully computes even when the matrix is mathematically singular.
-* **Gradient Descent Mechanics** Feature scaling is an absolute prerequisite for stable convergence. Batch GD scales optimally with the number of features but becomes a severe bottleneck with massive datasets.
+* **Linear Regression Optimization:** The Normal Equation requires inverting an $(n+1) \times (n+1)$ matrix with a computational complexity of $O(n^{2.4})$ to $O(n^3)$. Scikit-Learn employs an SVD-based pseudoinverse approach which operates at $O(n^2)$ complexity and successfully computes even when the matrix is mathematically singular.
+* **Gradient Descent Mechanics:** Feature scaling is an absolute prerequisite for stable convergence. Batch GD scales optimally with the number of features but becomes a severe bottleneck with massive datasets.
 * **Polynomial Models** Adding polynomial features creates a nonlinear decision boundary in the original input space while the model remains strictly linear with respect to its parameters.
-* **Regularization Prerequisites** Applying `StandardScaler` is mandatory before utilizing Ridge Lasso or Elastic Net. Lasso inherently performs feature selection by driving less important parameter weights to exactly zero.
-* **Softmax Parameter Updates** Logistic Regression is simply a special binary case of Softmax Regression. During optimization the parameter matrix $\Theta$ updates simultaneously via a single vectorized matrix operation $\Theta_{new} = \Theta_{old} - \eta \nabla_{\Theta} J(\Theta)$.
+* **Regularization Prerequisites:** Applying `StandardScaler` is mandatory before utilizing Ridge Lasso or Elastic Net. Lasso inherently performs feature selection by driving less important parameter weights to exactly zero.
+* **Softmax Parameter Updates:** Logistic Regression is simply a special binary case of Softmax Regression. During optimization the parameter matrix $\Theta$ updates simultaneously via a single vectorized matrix operation $\Theta_{new} = \Theta_{old} - \eta \nabla_{\Theta} J(\Theta)$.
 
 
 ## 🧠 Self-Reflection & Insights
