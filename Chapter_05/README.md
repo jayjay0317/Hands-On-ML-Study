@@ -9,6 +9,16 @@
 
 ## 🧠 Self-Reflection & Insights
 
+* **Native Missing Value Support:** Scikit Learn recently updated decision trees to handle missing values intrinsically without external imputers. During training the algorithm evaluates sending all missing values to the left child versus the right child and purely chooses the path that yields the lowest impurity. During prediction unseen missing values simply follow the path that absorbed the most missing values during the training phase.
+* **Impurity Dynamics:** A mathematically counterintuitive fact is that an individual child node can possess a higher impurity than its parent node. However the total weighted impurity of both child nodes combined is strictly guaranteed to be lower than the parent.
+* **Greedy Optimization and Ensembles:** CART is a greedy algorithm meaning it strictly optimizes the split at the current node without evaluating deeper levels resulting in a reasonably good but suboptimal tree. Random Forest models also use this greedy approach for individual trees but mitigate the suboptimal nature by averaging predictions across hundreds of trees trained on randomly subsetted data reducing global variance.
+* **The Piecewise Extrapolation Flaw:** Because all instances falling into the same leaf receive the identical prediction decision trees operate mathematically as piecewise constant step functions. They cannot model smooth continuous curves and structurally fail at extrapolation because they can never predict a value outside the range observed in the training leaves.
+* **Orthogonal Vulnerability:** Trees partition space strictly perpendicular to the axes. Rotating a simple linearly separable dataset forces the model to build overly complex staircase boundaries. Applying PCA before training mathematically rotates the data to reduce feature correlation elegantly resolving this structural weakness.
+* **Thermodynamic vs Information Entropy:** Both concepts measure disorder using logarithmic equations. While thermodynamics describes physical states of molecules decision tree entropy quantifies the mathematical uncertainty and the mixture of classes within a dataset partition.
+* **Practical Optimization Protocol:** Simultaneously tuning all regularization parameters creates geometric redundancy and computational bloat. The optimal engineering standard is a two step process. First pre prune by strictly limiting `max_depth` and `min_samples_leaf`. Second post prune by utilizing `ccp_alpha` to statistically trim useless branches preventing hyperparameter search explosion.
+
+
+
 - Scikit-Learn uses the CART algorithm, which produces only binary trees, meaning trees where split nodes
 always have exactly two children
 
