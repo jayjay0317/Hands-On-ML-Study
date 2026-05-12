@@ -1,6 +1,12 @@
 # Chapter 5: Decision Trees
 ## 💡 Key Takeaways
 
+* **The CART Algorithm:** Scikit Learn utilizes the greedy Classification and Regression Tree algorithm which exclusively generates binary trees. It optimizes splits by searching for a single feature and threshold that minimizes the weighted impurity or Mean Squared Error of the resulting child nodes.
+* **White Box Interpretability:** The decision making process is entirely transparent and mathematically traceable. This structural clarity makes trees essential in highly regulated domains like healthcare and finance where model explainability is mandatory.
+* **Nonparametric Flexibility:** Decision trees do not predetermine the number of parameters before training. This allows them to flexibly fit highly complex datasets but makes them intrinsically vulnerable to severe overfitting requiring strict parameter regularization.
+* **Probability Estimation:** Trees calculate class probabilities mathematically by traversing an instance to its designated leaf node and computing the exact ratio of training instances belonging to each class within that specific boundary.
+* **Regression Step Functions:** Unlike linear models regression trees predict a constant value for an entire region. This predicted value is simply the mathematical average of all target values within that leaf node minimizing the local MSE.
+
 ## 🧠 Self-Reflection & Insights
 
 - Scikit-Learn uses the CART algorithm, which produces only binary trees, meaning trees where split nodes
