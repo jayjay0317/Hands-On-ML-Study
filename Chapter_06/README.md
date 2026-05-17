@@ -16,3 +16,9 @@
         - So soft voting works well only when the models produce reliable probability estimates (well-calibrated
             probabilities). If a model is overconfident or poorly calibrated, soft voting can even hurt performance.
             That is why techniques such as weighted soft voting or probability calibration are often used in practice.
+
+- How does bagging introduce more diversity in the subsets that each predictor is trained on compared to pasting?
+      - extra diversity means the predictors end up being less correlated, so the ensemble's variance is reduced
+      - overall, bagging often results in better models so its generally preferred
+
+  
