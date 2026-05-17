@@ -9,3 +9,10 @@
     - one way is to get diverse classifiers and train them using very different algorithms
     - you can also play with the model hyperparameters to get diverse models, or train the models on different subsets of the data
  
+- Soft voting often performs better than hard voting because it considers not only the predicted class but also the confidence (probability) of each model.
+  - However, this also means that very low probabilities can strongly affect the average. In other words:
+        - High confidence predictions have more influence.
+        - But extremely low confidence predictions also pull the average down.
+        - So soft voting works well only when the models produce reliable probability estimates (well-calibrated
+            probabilities). If a model is overconfident or poorly calibrated, soft voting can even hurt performance.
+            That is why techniques such as weighted soft voting or probability calibration are often used in practice.
