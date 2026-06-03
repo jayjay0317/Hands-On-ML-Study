@@ -24,4 +24,4 @@
 - in extra-trees, random thresholds are used for each feature rather than searching for the best possible threshold. What distribution do these random threshold values follow?
 
 - boosting primarily reduces bias, whereas bagging primarily reduces variance.
-- Predictor weights can become negative when a weak learner performs worse than random guessing. However, if $ \alpha_j $ is negative, then $ \exp(\alpha_j) < 1 $, so according to the instance weight update rule, wouldn't the weights of misclassified instances actually decrease rather than increase?
+- Predictor weights can become negative when a weak learner performs worse than random guessing. However, if $$ \alpha_j $$ is negative, then $$ \exp(\alpha_j) < 1 $$, so according to the instance weight update rule, wouldn't the weights of misclassified instances actually decrease rather than increase?
