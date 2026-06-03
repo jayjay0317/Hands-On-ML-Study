@@ -25,3 +25,5 @@
 
 - boosting primarily reduces bias, whereas bagging primarily reduces variance.
 - Predictor weights can become negative when a weak learner performs worse than random guessing. However, if $\alpha_j$ is negative, then $\exp(\alpha_j) < 1$, so according to the instance weight update rule, wouldn't the weights of misclassified instances actually decrease rather than increase?
+
+-A more accurate predictor receives a larger predictor weight $\alpha_j$. This means that when a strong predictor misclassifies an instance, AdaBoost treats that instance as especially difficult and increases its weight more aggressively. In other words, if a reliable predictor gets an example wrong, the next predictor should pay much more attention to that example.
