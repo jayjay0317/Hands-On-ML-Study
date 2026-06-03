@@ -21,4 +21,4 @@
       - extra diversity means the predictors end up being less correlated, so the ensemble's variance is reduced
       - overall, bagging often results in better models so its generally preferred
 
-  
+- in extra-trees, random thresholds are used for each feature rather than searching for the best possible threshold. What distribution do these random threshold values follow?
