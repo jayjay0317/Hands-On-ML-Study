@@ -27,3 +27,9 @@
 - Predictor weights can become negative when a weak learner performs worse than random guessing. However, if $\alpha_j$ is negative, then $\exp(\alpha_j) < 1$, so according to the instance weight update rule, wouldn't the weights of misclassified instances actually decrease rather than increase?
 
 -A more accurate predictor receives a larger predictor weight $\alpha_j$. This means that when a strong predictor misclassifies an instance, AdaBoost treats that instance as especially difficult and increases its weight more aggressively. In other words, if a reliable predictor gets an example wrong, the next predictor should pay much more attention to that example.
+
+- shrinkage: a regularization technique for gradient boosting
+      - If you set the `learning_rate` to a low value, such as 0.05, you will need more trees in the ensemble to fit the
+         training set, but the predictions will usually generalize better.
+      - adding too many trees can cause overfitting
+      -  you can use cross-validation to find the optimal learning rate, using `GridSearchCV` or `RandomizedSearchCV`
