@@ -33,3 +33,6 @@
          training set, but the predictions will usually generalize better.
       - adding too many trees can cause overfitting
       -  you can use cross-validation to find the optimal learning rate, using `GridSearchCV` or `RandomizedSearchCV`
+
+- To find the optimal number of trees: if you set the n_iter_no_change hyperparameter to an integer value, say 10, then the GradientBoostingRegressor will automatically stop adding more trees during training if it sees that the last 10 trees didn’t help.
+      - How does judge that the last 10 trees didn't help? (How does it measure performance?)
