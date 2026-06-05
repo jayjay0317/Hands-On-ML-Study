@@ -36,3 +36,11 @@
 
 - To find the optimal number of trees: if you set the n_iter_no_change hyperparameter to an integer value, say 10, then the GradientBoostingRegressor will automatically stop adding more trees during training if it sees that the last 10 trees didn’t help.
       - How does judge that the last 10 trees didn't help? (How does it measure performance?)
+
+- In regular Gradient Boosting, the decision trees may need to search through many possible split thresholds.
+    Histogram-Based Gradient Boosting simplifies this process by replacing continuous values with integer bin indices.
+    For example, instead of evaluating many exact values of a feature, the model may group them into bins such as:
+    low values  
+    medium values  
+    high values  
+    This makes the split search much faster, especially for large datasets.
