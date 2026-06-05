@@ -44,3 +44,5 @@
     medium values  
     high values  
     This makes the split search much faster, especially for large datasets.
+
+- - The \( \log(m) \) term in regular GBRT comes from sorting feature values while searching for the best split. HGB avoids much of this cost by binning continuous features into a fixed number of integer bins before training.
