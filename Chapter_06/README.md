@@ -45,4 +45,5 @@
     high values  
     This makes the split search much faster, especially for large datasets.
 
-- - The $\log(m)$ term in regular GBRT comes from sorting feature values while searching for the best split. HGB avoids much of this cost by binning continuous features into a fixed number of integer bins before training.
+- The $\log(m)$ term in regular GBRT comes from sorting feature values while searching for the best split. HGB avoids much of this cost by binning continuous features into a fixed number of integer bins before training.
+- HGB speeds up training mainly by binning numerical features, but it is also convenient for real-world tabular datasets because Scikit-Learn's HGB implementation supports categorical features and missing values natively. This means it often requires less preprocessing, such as scaling, imputation, or one-hot encoding.
