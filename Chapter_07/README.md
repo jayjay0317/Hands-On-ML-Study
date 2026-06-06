@@ -1,4 +1,5 @@
-# Chapter 6: Ensemble Learning and Random Forests
+# Chapter 6: Dimensionality Reduction
+
 ## 💡 Key Takeaways
 
 
