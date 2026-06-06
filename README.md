@@ -20,10 +20,10 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 
 ## 🛠️ Tech Stack & Libraries
 * **Language:** Python 3
-* **Data Processing:** NumPy, Pandas
-* **Machine Learning:** Scikit-Learn
+* **Data Processing:** NumPy, pandas
+* **Machine Learning:** scikit-learn
 * **Serialization & MLOps:** Joblib
-* **Visualization:** Matplotlib, Seaborn
+* **Visualization:** matplotlib, seaborn
 
 ## 💡 How to Run the Notebooks
 To run the Jupyter Notebooks locally, ensure you have the required libraries installed. It is recommended to use an isolated virtual environment.
