@@ -1,4 +1,4 @@
-# Chapter 6: Dimensionality Reduction
+# Chapter 7: Dimensionality Reduction
 
 ## 💡 Key Takeaways
 
