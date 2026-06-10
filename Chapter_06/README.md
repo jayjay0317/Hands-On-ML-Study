@@ -18,7 +18,17 @@
 - Extra-Trees add even more randomness by using random thresholds for splits instead of searching for the best possible threshold.
 
 - AdaBoost increases the weights of misclassified instances so that later predictors focus more on difficult examples.
-    
+
+- Gradient Boosting trains each new predictor on the residual errors made by the previous ensemble.
+
+- Shrinkage is a regularization technique in Gradient Boosting. A lower learning_rate requires more trees but often improves generalization.
+
+- Histogram-Based Gradient Boosting speeds up training by binning numerical features into a fixed number of discrete intervals, reducing the number of split thresholds that need to be evaluated.
+
+- HGB is especially useful for large tabular datasets because it is fast, memory efficient, and supports missing values and categorical features natively.
+
+- Stacking converts the predictions of multiple base models into new meta-features. A final estimator then learns how to combine these meta-features to make the final prediction.
+
 ## 🧠 Self-Reflection & Insights
 
 - for an ensemble methods to work best, all predictors must be as independent from one another as possible, making uncorrelated errors and make uncorrelated errors
