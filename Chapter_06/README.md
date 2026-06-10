@@ -1,6 +1,10 @@
 # Chapter 6: Ensemble Learning and Random Forests
 ## 💡 Key Takeaways
 
+•	Ensemble learning combines multiple predictors to build a model that is often more accurate and robust than any individual model.
+•	For ensemble methods to work well, the individual predictors should make different kinds of errors. This can be encouraged by using different algorithms, different hyperparameters, or different subsets of the training data.
+•	Voting classifiers combine predictions from multiple models. Hard voting uses majority vote, while soft voting averages predicted probabilities.
+•	Soft voting often performs better than hard voting because it uses confidence information, but it depends on the models producing reliable probability estimates.
 
 ## 🧠 Self-Reflection & Insights
 
@@ -8,7 +12,7 @@
     - cannot be true because they are trained on the same data
     - one way is to get diverse classifiers and train them using very different algorithms
     - you can also play with the model hyperparameters to get diverse models, or train the models on different subsets of the data
- 
+
 - Soft voting often performs better than hard voting because it considers not only the predicted class but also the confidence (probability) of each model.
   - However, this also means that very low probabilities can strongly affect the average. In other words:
         - High confidence predictions have more influence.
