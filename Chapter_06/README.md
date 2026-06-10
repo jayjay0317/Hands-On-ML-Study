@@ -1,14 +1,24 @@
 # Chapter 6: Ensemble Learning and Random Forests
 ## 💡 Key Takeaways
 
-•	Ensemble learning combines multiple predictors to build a model that is often more accurate and robust than any individual model.
+- Ensemble learning combines multiple predictors to build a model that is often more accurate and robust than any individual model.
 
-•	For ensemble methods to work well, the individual predictors should make different kinds of errors. This can be encouraged by using different algorithms, different hyperparameters, or different subsets of the training data.
+- For ensemble methods to work well, the individual predictors should make different kinds of errors. This can be encouraged by using different algorithms, different hyperparameters, or different subsets of the training data.
 
-•	Voting classifiers combine predictions from multiple models. Hard voting uses majority vote, while soft voting averages predicted probabilities.
+- Voting classifiers combine predictions from multiple models. Hard voting uses majority vote, while soft voting averages predicted probabilities.
 
-•	Soft voting often performs better than hard voting because it uses confidence information, but it depends on the models producing reliable probability estimates.
+- Soft voting often performs better than hard voting because it uses confidence information, but it depends on the models producing reliable probability estimates.
 
+- Bagging trains the same type of model on different random subsets of the training data. This is especially effective for high-variance models such as decision trees.
+
+- Bagging generally reduces variance, while boosting primarily reduces bias by sequentially correcting previous errors.
+
+- Random Forests improve upon individual decision trees by training many trees on random subsets of data and features.
+
+- Extra-Trees add even more randomness by using random thresholds for splits instead of searching for the best possible threshold.
+
+- AdaBoost increases the weights of misclassified instances so that later predictors focus more on difficult examples.
+    
 ## 🧠 Self-Reflection & Insights
 
 - for an ensemble methods to work best, all predictors must be as independent from one another as possible, making uncorrelated errors and make uncorrelated errors
