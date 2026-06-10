@@ -21,7 +21,7 @@
 
 - Gradient Boosting trains each new predictor on the residual errors made by the previous ensemble.
 
-- Shrinkage is a regularization technique in Gradient Boosting. A lower learning_rate requires more trees but often improves generalization.
+- Shrinkage is a regularization technique in Gradient Boosting. A lower `learning_rate` requires more trees but often improves generalization.
 
 - Histogram-Based Gradient Boosting speeds up training by binning numerical features into a fixed number of discrete intervals, reducing the number of split thresholds that need to be evaluated.
 
