@@ -2,8 +2,11 @@
 ## 💡 Key Takeaways
 
 •	Ensemble learning combines multiple predictors to build a model that is often more accurate and robust than any individual model.
+
 •	For ensemble methods to work well, the individual predictors should make different kinds of errors. This can be encouraged by using different algorithms, different hyperparameters, or different subsets of the training data.
+
 •	Voting classifiers combine predictions from multiple models. Hard voting uses majority vote, while soft voting averages predicted probabilities.
+
 •	Soft voting often performs better than hard voting because it uses confidence information, but it depends on the models producing reliable probability estimates.
 
 ## 🧠 Self-Reflection & Insights
