@@ -1,7 +1,7 @@
 # Chapter 6: Ensemble Learning and Random Forests
 ## 💡 Key Takeaways
 
-- Ensemble Diversity*: Ensemble methods achieve their strength by combining predictors that make different types of errors. Since models trained on the same dataset are naturally correlated, diversity must be introduced through different algorithms, hyperparameters, random sampling, or feature subsets.
+- **Ensemble Diversity:** Ensemble methods achieve their strength by combining predictors that make different types of errors. Since models trained on the same dataset are naturally correlated, diversity must be introduced through different algorithms, hyperparameters, random sampling, or feature subsets.
 
 
 - Ensemble learning combines multiple predictors to build a model that is often more accurate and robust than any individual model.
