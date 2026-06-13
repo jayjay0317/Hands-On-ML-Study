@@ -31,3 +31,14 @@ Example: If each data point consists of 3 features (e.g., Height, Weight, Age), 
 
 - The recovered data is not exactly the same as the original data because PCA dimensionality reduction is a lossy process. When PCA reduces the data from 784 dimensions to fewer dimensions, such as 154, it discards some information. Since many different original 784-dimensional points can be projected to the same lower-dimensional point, the original data cannot be perfectly reconstructed.
 - If all 784 principal components are used, the PCA transformation matrix is square and invertible, so the original data can be recovered exactly. However, when only some components are used, the matrix is not square, so a true inverse does not exist. Therefore, `inverse_transform()` only reconstructs an approximation of the original data by projecting the reduced data back into the original feature space.
+
+- The best value for n_components is selected based on the model’s validation performance.
+
+During the search, different parameter combinations are tested, and each one is evaluated using cross-validation. The combination that gives the highest average validation score is chosen as the best.
+
+In general, n_components controls how much dimensionality reduction PCA performs:
+
+Too small: may lose important information
+Too large: may keep unnecessary noise or reduce the benefit of PCA
+
+So the best value is the one that provides the best balance and leads to the strongest model performance.
