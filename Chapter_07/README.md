@@ -45,3 +45,7 @@ Too large: may keep unnecessary noise or reduce the benefit of PCA
 So the best value is the one that provides the best balance and leads to the strongest model performance.
 
 - Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$, because it decomposes the full $m \times n$ matrix. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
+
+- Randomized PCA uses random projection to quickly find a smaller subspace that likely contains the most important principal components. Instead of computing the full SVD of the entire data matrix, it performs SVD inside this smaller subspace, making it much faster when the target dimension `d` is much smaller than the original number of features.
+
+- Random Projection reduces dimensionality by multiplying the original data matrix by a randomly generated projection matrix. It does not search for the optimal variance-preserving axes like PCA, but it can approximately preserve distances between instances when the target dimension is large enough.
