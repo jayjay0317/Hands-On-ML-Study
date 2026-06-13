@@ -30,5 +30,4 @@ Example: If each data point consists of 3 features (e.g., Height, Weight, Age), 
     - smaller number of dimensions might be enough for a more powerful model
 
 - The recovered data is not exactly the same as the original data because PCA dimensionality reduction is a lossy process. When PCA reduces the data from 784 dimensions to fewer dimensions, such as 154, it discards some information. Since many different original 784-dimensional points can be projected to the same lower-dimensional point, the original data cannot be perfectly reconstructed.
-
-If all 784 principal components are used, the PCA transformation matrix is square and invertible, so the original data can be recovered exactly. However, when only some components are used, the matrix is not square, so a true inverse does not exist. Therefore, `inverse_transform()` only reconstructs an approximation of the original data by projecting the reduced data back into the original feature space.
+- If all 784 principal components are used, the PCA transformation matrix is square and invertible, so the original data can be recovered exactly. However, when only some components are used, the matrix is not square, so a true inverse does not exist. Therefore, `inverse_transform()` only reconstructs an approximation of the original data by projecting the reduced data back into the original feature space.
