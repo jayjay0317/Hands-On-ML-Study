@@ -38,7 +38,10 @@ During the search, different parameter combinations are tested, and each one is 
 
 In general, n_components controls how much dimensionality reduction PCA performs:
 
+
 Too small: may lose important information
 Too large: may keep unnecessary noise or reduce the benefit of PCA
 
 So the best value is the one that provides the best balance and leads to the strongest model performance.
+
+- Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$, because it decomposes the full $m \times n$ matrix. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
