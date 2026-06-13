@@ -22,3 +22,9 @@ Core Concept: It represents the number of dimensions in the vector space where t
 Perspective: Mathematical (Vector Space).
 
 Example: If each data point consists of 3 features (e.g., Height, Weight, Age), the data is 3-dimensional, even if it is stored in a 2D NumPy array.
+
+
+- Why does preserving more variance preserve more information?
+
+- the optimal number of dimensions also depends on which model will be used after dimensionality reduction
+    - smaller number of dimensions might be enough for a more powerful model
