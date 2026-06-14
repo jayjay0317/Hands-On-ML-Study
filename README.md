@@ -15,7 +15,7 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | **Chapter 5** | Decision Trees | [📝 Notebook](Chapter_05/05_decision_trees.ipynb) | [📖 README](Chapter_05/README.md) |
 | **Chapter 6** | Ensemble Learning and Random Forests | [📝 Notebook](Chapter_06/06_ensemble_learning.ipynb) | [📖 README](Chapter_06/README.md) |
 | **Chapter 7** | Dimensionality Reduction | [📝 Notebook](Chapter_07/07_dimensionality_reduction.ipynb) | [📖 README](Chapter_07/README.md) |
-| **Chapter 8** | Unsupervised Learning Techniques | [📝 Notebook](Chapter_07/07_dimensionality_reduction.ipynb) | [📖 README](Chapter_08/README.md) |
+| **Chapter 8** | Unsupervised Learning Techniques | [📝 Notebook](Chapter_08/08_unsupervised_learning.ipynb) | [📖 README](Chapter_08/README.md) |
 
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
 
