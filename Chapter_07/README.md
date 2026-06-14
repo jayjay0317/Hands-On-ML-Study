@@ -57,3 +57,5 @@ Randomized PCA is still PCA. Its goal is still to find principal components that
 In short, Random Projection uses random directions as the final reduced space, while Randomized PCA uses randomness only as a computational shortcut to approximate PCA.
 
 - Sparse random projection is more memory efficient because the random projection matrix contains mostly zeros. Instead of storing every entry in a dense matrix, sparse representations store only the nonzero values and their positions. This is especially useful for very high-dimensional datasets where most values are zero, such as text data.
+
+- LLE does not assign absolute positions to the low-dimensional points. The embedding is only meaningful up to translation, rotation, reflection, and scaling. To choose one valid coordinate system, LLE applies constraints such as centering the embedding around zero and fixing its scale. Therefore, the exact coordinates of each point are not important by themselves; what matters is whether the local neighbor relationships are preserved.
