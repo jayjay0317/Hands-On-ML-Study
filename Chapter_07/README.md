@@ -49,3 +49,9 @@ So the best value is the one that provides the best balance and leads to the str
 - Randomized PCA uses random projection to quickly find a smaller subspace that likely contains the most important principal components. Instead of computing the full SVD of the entire data matrix, it performs SVD inside this smaller subspace, making it much faster when the target dimension `d` is much smaller than the original number of features.
 
 - Random Projection reduces dimensionality by multiplying the original data matrix by a randomly generated projection matrix. It does not search for the optimal variance-preserving axes like PCA, but it can approximately preserve distances between instances when the target dimension is large enough.
+
+- Random Projection is a dimensionality reduction method on its own. It directly projects the original data onto randomly generated lower-dimensional axes. It does not try to find the best variance-preserving directions like PCA, but it can approximately preserve distances between instances when the target dimension is large enough.
+
+Randomized PCA is still PCA. Its goal is still to find principal components that preserve as much variance as possible. The difference is that it uses randomness to approximate the top principal components faster instead of computing the full SVD exactly.
+
+In short, Random Projection uses random directions as the final reduced space, while Randomized PCA uses randomness only as a computational shortcut to approximate PCA.
