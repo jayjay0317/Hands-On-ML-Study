@@ -55,3 +55,5 @@ So the best value is the one that provides the best balance and leads to the str
 Randomized PCA is still PCA. Its goal is still to find principal components that preserve as much variance as possible. The difference is that it uses randomness to approximate the top principal components faster instead of computing the full SVD exactly.
 
 In short, Random Projection uses random directions as the final reduced space, while Randomized PCA uses randomness only as a computational shortcut to approximate PCA.
+
+- Sparse random projection is more memory efficient because the random projection matrix contains mostly zeros. Instead of storing every entry in a dense matrix, sparse representations store only the nonzero values and their positions. This is especially useful for very high-dimensional datasets where most values are zero, such as text data.
