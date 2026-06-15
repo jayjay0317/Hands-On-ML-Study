@@ -2,6 +2,11 @@
 
 ## 💡 Key Takeaways
 
+- The word “dimension” can mean different things depending on the context. In NumPy, ndim refers to the number of axes or nested array levels. For example, a table-shaped array with 5 rows and 3 columns has ndim=2. In PCA, however, dimension usually refers to the number of features in the vector space where each data point lives. For example, if each instance has height, weight, and age, then the data is 3-dimensional in the PCA sense, even if it is stored in a 2D NumPy array.
+- PCA reduces dimensionality by finding new orthogonal axes called principal components. These axes are chosen to preserve as much variance as possible. Preserving more variance usually means preserving more of the structure in the data, because high-variance directions contain more of the differences between instances.
+- PCA is a lossy dimensionality reduction method when only some principal components are kept. For example, reducing 784 pixel features to 154 principal components discards some information. Because many original high-dimensional points can map to the same lower-dimensional representation, the original data cannot be perfectly recovered.
+- inverse_transform() reconstructs an approximation of the original data by projecting the reduced representation back into the original feature space. If all principal components are kept, the transformation can recover the original data exactly. However, when only a subset of components is used, a true inverse does not exist.
+
 
 ## 🧠 Self-Reflection & Insights
 
