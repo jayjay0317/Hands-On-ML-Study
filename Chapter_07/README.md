@@ -10,7 +10,7 @@
 
 - `inverse_transform()` reconstructs an approximation of the original data by projecting the reduced representation back into the original feature space. If all principal components are kept, the transformation can recover the original data exactly. However, when only a subset of components is used, a true inverse does not exist.
 
-- The best value of n_components depends on the goal. Keeping too few components may remove useful information, while keeping too many components may preserve noise or reduce the benefit of dimensionality reduction. In supervised learning, the best value can be selected based on validation or cross-validation performance.
+- The best value of `n_components` depends on the goal. Keeping too few components may remove useful information, while keeping too many components may preserve noise or reduce the benefit of dimensionality reduction. In supervised learning, the best value can be selected based on validation or cross-validation performance.
 
 - The optimal number of dimensions also depends on the model used after dimensionality reduction. A simpler model may benefit from more retained components, while a more powerful model may perform well with fewer dimensions.
 
