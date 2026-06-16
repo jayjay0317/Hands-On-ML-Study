@@ -2,33 +2,33 @@
 
 ## 💡 Key Takeaways
 
-- Dimensionality in NumPy vs PCA: In NumPy, dimension often refers to ndim, which describes the number of axes or structural depth of an array. In PCA, dimension refers to the number of features or variables that define each data point in feature space. For example, a dataset with 3 features is mathematically 3-dimensional, even if it is stored as a 2D NumPy array with shape (m, 3).
+- **Dimensionality in NumPy vs PCA:** In NumPy, dimension often refers to ndim, which describes the number of axes or structural depth of an array. In PCA, dimension refers to the number of features or variables that define each data point in feature space. For example, a dataset with 3 features is mathematically 3-dimensional, even if it is stored as a 2D NumPy array with shape (m, 3).
 
-- The Curse of Dimensionality: As the number of features increases, the feature space grows rapidly and the data becomes increasingly sparse. This can make models slower, harder to visualize, and more prone to overfitting because the training data covers only a small portion of the full feature space.
+- **The Curse of Dimensionality:** As the number of features increases, the feature space grows rapidly and the data becomes increasingly sparse. This can make models slower, harder to visualize, and more prone to overfitting because the training data covers only a small portion of the full feature space.
 
-- Projection vs Manifold Learning: Projection methods reduce dimensionality by mapping data onto a lower-dimensional space, while manifold learning methods try to uncover a lower-dimensional structure that may be curved. This distinction explains why PCA may work well on flat structures but fail on nonlinear datasets such as the Swiss roll.
+- **Projection vs Manifold Learning:** Projection methods reduce dimensionality by mapping data onto a lower-dimensional space, while manifold learning methods try to uncover a lower-dimensional structure that may be curved. This distinction explains why PCA may work well on flat structures but fail on nonlinear datasets such as the Swiss roll.
 
-- PCA and Variance Preservation: PCA reduces dimensionality by finding directions that preserve as much variance as possible. Preserving more variance usually means keeping more of the meaningful structure in the data, since high-variance directions often capture the main patterns of variation between instances.
+- **PCA and Variance Preservation:** PCA reduces dimensionality by finding directions that preserve as much variance as possible. Preserving more variance usually means keeping more of the meaningful structure in the data, since high-variance directions often capture the main patterns of variation between instances.
 
-- PCA and Feature Scaling: PCA is sensitive to feature scales because it focuses on directions with the largest variance. If one feature has a much larger scale than others, PCA may treat it as more important, so standardization is often necessary before applying PCA.
+- **PCA and Feature Scaling:** PCA is sensitive to feature scales because it focuses on directions with the largest variance. If one feature has a much larger scale than others, PCA may treat it as more important, so standardization is often necessary before applying PCA.
 
-- Choosing the Number of Dimensions: The optimal number of dimensions is not fixed. It can be chosen by preserving a target amount of variance, such as 95%, or by selecting the value of n_components that gives the best validation performance for the downstream model.
+- **Choosing the Number of Dimensions:** The optimal number of dimensions is not fixed. It can be chosen by preserving a target amount of variance, such as 95%, or by selecting the value of n_components that gives the best validation performance for the downstream model.
 
-- PCA as a Lossy Compression Method: PCA compression is lossy when only some principal components are kept. Since multiple original high-dimensional points can map to the same lower-dimensional representation, the original data cannot be perfectly reconstructed after dimensionality reduction.
+- **PCA as a Lossy Compression Method:** PCA compression is lossy when only some principal components are kept. Since multiple original high-dimensional points can map to the same lower-dimensional representation, the original data cannot be perfectly reconstructed after dimensionality reduction.
 
-- Reconstruction with inverse_transform(): When PCA reduces the data to fewer dimensions, inverse_transform() only reconstructs an approximation of the original data. If all principal components are kept, the transformation can recover the original data exactly, but when only a subset is used, a true inverse does not exist.
+- **Reconstruction with inverse_transform():** When PCA reduces the data to fewer dimensions, inverse_transform() only reconstructs an approximation of the original data. If all principal components are kept, the transformation can recover the original data exactly, but when only a subset is used, a true inverse does not exist.
 
-- Randomized PCA: Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
+- **Randomized PCA:** Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
 
-- Random Projection: Random Projection reduces dimensionality by multiplying the original data matrix by a randomly generated projection matrix. Unlike PCA, it does not search for optimal variance-preserving axes, but it can approximately preserve distances between instances when the target dimension is large enough.
+- **Random Projection:** Random Projection reduces dimensionality by multiplying the original data matrix by a randomly generated projection matrix. Unlike PCA, it does not search for optimal variance-preserving axes, but it can approximately preserve distances between instances when the target dimension is large enough.
 
-- Random Projection vs Randomized PCA: Random Projection is a dimensionality reduction method on its own, where random directions become the final reduced space. Randomized PCA is still PCA; it uses randomness only as a computational shortcut to approximate the top principal components faster.
+- **Random Projection vs Randomized PCA:** Random Projection is a dimensionality reduction method on its own, where random directions become the final reduced space. Randomized PCA is still PCA; it uses randomness only as a computational shortcut to approximate the top principal components faster.
 
-- Sparse Random Projection: Sparse random projection is more memory efficient because the random projection matrix contains mostly zeros. Instead of storing every entry in a dense matrix, sparse representations store only the nonzero values and their positions.
+- **Sparse Random Projection:** Sparse random projection is more memory efficient because the random projection matrix contains mostly zeros. Instead of storing every entry in a dense matrix, sparse representations store only the nonzero values and their positions.
 
-- LLE and Manifold Learning: Locally Linear Embedding, or LLE, is a nonlinear dimensionality reduction technique. It tries to preserve local neighbor relationships rather than projecting the data onto a flat subspace, making it useful for data that lies on a curved manifold.
+- **LLE and Manifold Learning:** Locally Linear Embedding, or LLE, is a nonlinear dimensionality reduction technique. It tries to preserve local neighbor relationships rather than projecting the data onto a flat subspace, making it useful for data that lies on a curved manifold.
 
-- Other Dimensionality Reduction Techniques: Techniques such as MDS, Isomap, t-SNE, and LDA serve different purposes. t-SNE is mainly used for visualization, while LDA is supervised and uses class labels to find axes that separate classes well.
+- **Other Dimensionality Reduction Techniques:** Techniques such as MDS, Isomap, t-SNE, and LDA serve different purposes. t-SNE is mainly used for visualization, while LDA is supervised and uses class labels to find axes that separate classes well.
 
 ## 🧠 Self-Reflection & Insights
 
