@@ -30,6 +30,21 @@
 
 ## 🧠 Self-Reflection & Insights
 
+- **Clarifying the Meaning of Dimension:** I realized that the word dimension can mean different things depending on context. In NumPy, dimension describes the structure of the array, such as whether it is 1D, 2D, or 3D. In PCA, dimension refers to the number of features in the mathematical vector space where each data point exists.
+
+- **Why Variance Represents Information:** I initially questioned why preserving more variance means preserving more information. The key intuition is that variance measures how much the data changes along a direction. If a direction has very low variance, most points are similar along that axis, so removing it usually loses less information than removing a high-variance direction.
+
+- **The Importance of Scaling Before PCA:** Since PCA chooses directions based on variance, feature scale can strongly affect the result. A feature with a large scale may dominate the principal components even if it is not truly more important, so standardization is often necessary before applying PCA.
+
+- **The Model-Dependent Nature of Dimensionality Reduction:** I learned that the best number of dimensions depends not only on the dataset, but also on the model used after dimensionality reduction. A more powerful model may perform well with fewer dimensions, while a simpler model may need more features to preserve enough predictive information.
+
+- **Understanding PCA Reconstruction:** PCA reconstruction helped me understand why dimensionality reduction is lossy. Once data is projected from 784 dimensions to fewer dimensions, some information is discarded. Because many original points can share the same lower-dimensional representation, `inverse_transform()` can only map the reduced data back into the original feature space approximately.
+
+- **Validation-Based Choice of `n_components`:** I realized that choosing `n_components` is similar to tuning any other hyperparameter. During cross-validation, different values are tested, and the best value is the one that leads to the strongest validation performance. Too few components may lose important information, while too many may keep unnecessary noise or reduce the benefit of PCA.
+
+
+
+
 1. NumPy Dimension (ndim)
 Definition: Refers to the structural depth or the number of axes in the array.
 
