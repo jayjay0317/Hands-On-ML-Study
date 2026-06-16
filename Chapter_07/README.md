@@ -2,7 +2,7 @@
 
 ## 💡 Key Takeaways
 
-- **Dimensionality in NumPy vs PCA:** In NumPy, dimension often refers to ndim, which describes the number of axes or structural depth of an array. In PCA, dimension refers to the number of features or variables that define each data point in feature space. For example, a dataset with 3 features is mathematically 3-dimensional, even if it is stored as a 2D NumPy array with shape (m, 3).
+- **Dimensionality in NumPy vs PCA:** In NumPy, dimension often refers to `ndim`, which describes the number of axes or structural depth of an array. In PCA, dimension refers to the number of features or variables that define each data point in feature space. For example, a dataset with 3 features is mathematically 3-dimensional, even if it is stored as a 2D NumPy array with shape `(m, 3)`.
 
 - **The Curse of Dimensionality:** As the number of features increases, the feature space grows rapidly and the data becomes increasingly sparse. This can make models slower, harder to visualize, and more prone to overfitting because the training data covers only a small portion of the full feature space.
 
@@ -12,11 +12,9 @@
 
 - **PCA and Feature Scaling:** PCA is sensitive to feature scales because it focuses on directions with the largest variance. If one feature has a much larger scale than others, PCA may treat it as more important, so standardization is often necessary before applying PCA.
 
-- **Choosing the Number of Dimensions:** The optimal number of dimensions is not fixed. It can be chosen by preserving a target amount of variance, such as 95%, or by selecting the value of n_components that gives the best validation performance for the downstream model.
+- **Choosing the Number of Dimensions:** The optimal number of dimensions is not fixed. It can be chosen by preserving a target amount of variance, such as 95%, or by selecting the value of `n_components` that gives the best validation performance for the downstream model.
 
-- **PCA as a Lossy Compression Method:** PCA compression is lossy when only some principal components are kept. Since multiple original high-dimensional points can map to the same lower-dimensional representation, the original data cannot be perfectly reconstructed after dimensionality reduction.
-
-- **Reconstruction with inverse_transform():** When PCA reduces the data to fewer dimensions, inverse_transform() only reconstructs an approximation of the original data. If all principal components are kept, the transformation can recover the original data exactly, but when only a subset is used, a true inverse does not exist.
+- **PCA as Lossy Compression:** PCA compression is lossy when only some principal components are kept. When PCA reduces data to fewer dimensions, `inverse_transform()` can only reconstruct an approximation of the original data because a true inverse no longer exists.
 
 - **Randomized PCA:** Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
 
@@ -28,7 +26,7 @@
 
 - **LLE and Manifold Learning:** Locally Linear Embedding, or LLE, is a nonlinear dimensionality reduction technique. It tries to preserve local neighbor relationships rather than projecting the data onto a flat subspace, making it useful for data that lies on a curved manifold.
 
-- **Other Dimensionality Reduction Techniques:** Techniques such as MDS, Isomap, t-SNE, and LDA serve different purposes. t-SNE is mainly used for visualization, while LDA is supervised and uses class labels to find axes that separate classes well.
+- **Other Dimensionality Reduction Techniques:** Techniques such as `MDS`, `Isomap`, `t-SNE`, and `LDA` serve different purposes. `t-SNE` is mainly used for visualization, while `LDA` is supervised and uses class labels to find axes that separate classes well.
 
 ## 🧠 Self-Reflection & Insights
 
