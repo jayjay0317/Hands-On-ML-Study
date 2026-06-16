@@ -42,60 +42,14 @@
 
 - **Validation-Based Choice of `n_components`:** I realized that choosing `n_components` is similar to tuning any other hyperparameter. During cross-validation, different values are tested, and the best value is the one that leads to the strongest validation performance. Too few components may lose important information, while too many may keep unnecessary noise or reduce the benefit of PCA.
 
+- **Randomized PCA as Approximate PCA:** Randomized PCA is not a different dimensionality reduction goal from PCA. It still tries to find variance-preserving principal components. The difference is computational: it uses random projection to find a smaller subspace that likely contains the most important components, then performs SVD inside that subspace.
 
+- **Random Projection as a Different Idea:** Random Projection felt surprising because it does not search for the best axes at all. Instead, it relies on the Johnson-Lindenstrauss lemma, which says that distances can be approximately preserved after random projection if the target dimension is large enough.
 
+- **Random Projection vs Randomized PCA:** I initially found the names confusing because both involve randomness. The distinction is that Random Projection uses random directions as the final representation, while Randomized PCA uses randomness only to make PCA faster.
 
-1. NumPy Dimension (ndim)
-Definition: Refers to the structural depth or the number of axes in the array.
+- **Sparse Matrix Memory Efficiency:** Sparse random projection made me think more carefully about memory usage. A sparse matrix is efficient because it does not store all the zeros. Instead, it stores only the nonzero values and their positions, which is especially useful for very high-dimensional datasets such as text data.
 
-Core Concept: It represents the number of nested containers (brackets []) in the data structure. It is purely about how the data is organized in computer memory.
+- **LLE and Coordinate Ambiguity:** LLE clarified that low-dimensional embeddings do not have meaningful absolute positions. The result is meaningful only up to translation, rotation, reflection, and scaling. LLE also does not randomly initialize points and move them iteratively; after computing reconstruction weights, it solves an eigenvalue problem to find all low-dimensional coordinates at once.
 
-Perspective: Computational (Data Structure).
-
-Example: A 2D matrix (like a table with 5 rows and 3 columns) has ndim=2, regardless of the data it holds.
-
-2. PCA Dimension (Feature Space)
-Definition: Refers to the number of features (variables) or the degrees of freedom that define each data point.
-
-Core Concept: It represents the number of dimensions in the vector space where the data points exist. It is about the informational complexity of the data.
-
-Perspective: Mathematical (Vector Space).
-
-Example: If each data point consists of 3 features (e.g., Height, Weight, Age), the data is 3-dimensional, even if it is stored in a 2D NumPy array.
-
-
-- Why does preserving more variance preserve more information?
-
-- the optimal number of dimensions also depends on which model will be used after dimensionality reduction
-    - smaller number of dimensions might be enough for a more powerful model
-
-- The recovered data is not exactly the same as the original data because PCA dimensionality reduction is a lossy process. When PCA reduces the data from 784 dimensions to fewer dimensions, such as 154, it discards some information. Since many different original 784-dimensional points can be projected to the same lower-dimensional point, the original data cannot be perfectly reconstructed.
-- If all 784 principal components are used, the PCA transformation matrix is square and invertible, so the original data can be recovered exactly. However, when only some components are used, the matrix is not square, so a true inverse does not exist. Therefore, `inverse_transform()` only reconstructs an approximation of the original data by projecting the reduced data back into the original feature space.
-
-- The best value for n_components is selected based on the model’s validation performance.
-
-During the search, different parameter combinations are tested, and each one is evaluated using cross-validation. The combination that gives the highest average validation score is chosen as the best.
-
-In general, n_components controls how much dimensionality reduction PCA performs:
-
-
-Too small: may lose important information
-Too large: may keep unnecessary noise or reduce the benefit of PCA
-
-So the best value is the one that provides the best balance and leads to the strongest model performance.
-
-- Full SVD becomes expensive when the data matrix $X$ has many instances $m$ and features $n$, because it decomposes the full $m \times n$ matrix. Randomized PCA speeds this up by approximating only the leading $d$ principal components, which is much cheaper when $d \ll n$.
-
-- Randomized PCA uses random projection to quickly find a smaller subspace that likely contains the most important principal components. Instead of computing the full SVD of the entire data matrix, it performs SVD inside this smaller subspace, making it much faster when the target dimension `d` is much smaller than the original number of features.
-
-- Random Projection reduces dimensionality by multiplying the original data matrix by a randomly generated projection matrix. It does not search for the optimal variance-preserving axes like PCA, but it can approximately preserve distances between instances when the target dimension is large enough.
-
-- Random Projection is a dimensionality reduction method on its own. It directly projects the original data onto randomly generated lower-dimensional axes. It does not try to find the best variance-preserving directions like PCA, but it can approximately preserve distances between instances when the target dimension is large enough.
-
-Randomized PCA is still PCA. Its goal is still to find principal components that preserve as much variance as possible. The difference is that it uses randomness to approximate the top principal components faster instead of computing the full SVD exactly.
-
-In short, Random Projection uses random directions as the final reduced space, while Randomized PCA uses randomness only as a computational shortcut to approximate PCA.
-
-- Sparse random projection is more memory efficient because the random projection matrix contains mostly zeros. Instead of storing every entry in a dense matrix, sparse representations store only the nonzero values and their positions. This is especially useful for very high-dimensional datasets where most values are zero, such as text data.
-
-- LLE does not assign absolute positions to the low-dimensional points. The embedding is only meaningful up to translation, rotation, reflection, and scaling. To choose one valid coordinate system, LLE applies constraints such as centering the embedding around zero and fixing its scale. Therefore, the exact coordinates of each point are not important by themselves; what matters is whether the local neighbor relationships are preserved.
+- **t-SNE as a Visualization Tool:** I learned that not every dimensionality reduction technique is meant to be used as preprocessing for a predictive model. For example, `t-SNE` is mainly useful for visualization and exploration because it focuses on preserving local similarity in a low-dimensional plot.
