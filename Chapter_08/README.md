@@ -13,3 +13,5 @@
 - is it necessary to specify `random_state` in k-means clustering when initial centroid positions are given?
 
 - I expected mini-batch k-means to always have higher inertia than regular k-means because it uses approximate updates. However, this is not guaranteed. Since k-means can converge to local optima depending on initialization and update paths, mini-batch k-means can sometimes find a solution with lower inertia.
+
+- lower inertia doesn't always mean it has the most optimal number of clusters. The number of clusters that gives more clusters of similar sizes might be optimal despite higher inertia value. Silhouette diagram can be used to visually analyze this.
