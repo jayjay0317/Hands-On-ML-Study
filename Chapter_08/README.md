@@ -26,3 +26,5 @@
       - The state of the art in semantic or instance segmentation today is achieved using complex architectures based on convolutional neural networks or vision              transformers 
 
 - Why does labeling representative instances instead of just random instances improve the model performance?
+
+- is there a different way to find an optimal eps for DBSCAN other than looking at the plots like in the book?
