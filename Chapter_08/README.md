@@ -23,8 +23,11 @@
 - lower inertia doesn't always mean it has the most optimal number of clusters. The number of clusters that gives more clusters of similar sizes might be optimal despite higher inertia value. Silhouette diagram can be used to visually analyze this.
 
 - several variants of image segmentation: color segmentation, semantic segmentation, instance segmentation
-      - The state of the art in semantic or instance segmentation today is achieved using complex architectures based on convolutional neural networks or vision              transformers 
+      - The state of the art in semantic or instance segmentation today is achieved using complex architectures based on convolutional neural networks or vision              transformers
 
 - Why does labeling representative instances instead of just random instances improve the model performance?
 
 - is there a different way to find an optimal eps for DBSCAN other than looking at the plots like in the book?
+
+- why is the computational complexity of a `GaussianMixture` model greater when `covariance_type` is "tied" compared to when it is "spherical" or "diag"?
+      - Wouldn't it be less complex because all clusters have the same covariance matrix?
