@@ -31,3 +31,5 @@
 
 - why is the computational complexity of a `GaussianMixture` model greater when `covariance_type` is "tied" compared to when it is "spherical" or "diag"?
       - Wouldn't it be less complex because all clusters have the same covariance matrix?
+
+- gaussian mixture model assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown. How can we make this assumption in practice?
