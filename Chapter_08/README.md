@@ -39,3 +39,5 @@
 - **Why Diagonal Covariance Cannot Model Rotated Clusters:** Setting the off-diagonal covariance values to `0` assumes that the features do not vary together. As a result, the model can create horizontally or vertically stretched ellipses, but it cannot represent tilted or rotated ellipses.
 
 - **Comparison with Full Covariance:** With `covariance_type="full"`, the model can learn nonzero covariance values between features. This allows it to model correlations between features and capture rotated elliptical clusters.
+
+- **Why GMM Is More Flexible than k-means:** K-means represents each cluster only by a centroid and assigns instances based on the nearest centroid. In contrast, GMM also learns each cluster's relative weight and covariance structure. This allows GMM to model clusters with different sizes, densities, elliptical shapes, and orientations.
