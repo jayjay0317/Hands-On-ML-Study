@@ -33,3 +33,9 @@
       - Wouldn't it be less complex because all clusters have the same covariance matrix?
 
 - gaussian mixture model assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown. How can we make this assumption in practice?
+
+- **Diagonal Covariance in GMM:** When `covariance_type="diag"`, each cluster uses a diagonal covariance matrix. The diagonal values represent the variance of each feature, while the off-diagonal values are fixed at `0`.
+
+- **Why Diagonal Covariance Cannot Model Rotated Clusters:** Setting the off-diagonal covariance values to `0` assumes that the features do not vary together. As a result, the model can create horizontally or vertically stretched ellipses, but it cannot represent tilted or rotated ellipses.
+
+- **Comparison with Full Covariance:** With `covariance_type="full"`, the model can learn nonzero covariance values between features. This allows it to model correlations between features and capture rotated elliptical clusters.
