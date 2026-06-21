@@ -40,4 +40,10 @@
 
 - **Comparison with Full Covariance:** With `covariance_type="full"`, the model can learn nonzero covariance values between features. This allows it to model correlations between features and capture rotated elliptical clusters.
 
+- **Mixture Density vs. Cluster Membership:** For a point located between two Gaussian components, GMM combines the density contributions from all components, weighted by their cluster weights, to calculate the overall density. Therefore, a point can still have a relatively high total density if it lies in an overlap region between clusters.
+
+- **`score_samples()` vs. `predict_proba()`:** The `score_samples()` method returns the log of the overall mixture density at each point. In contrast, `predict_proba()` returns the relative probability, or responsibility, that each Gaussian component has for that point.
+
+- **Points Between Clusters Are Not Always Anomalies:** A point between two clusters is not automatically an anomaly. If the Gaussian distributions overlap, both components may contribute enough density for the point to be considered normal. However, if the clusters are well separated and the region between them has low density, the point is more likely to be flagged as an anomaly.
+
 - **Why GMM Is More Flexible than k-means:** K-means represents each cluster only by a centroid and assigns instances based on the nearest centroid. In contrast, GMM also learns each cluster's relative weight and covariance structure. This allows GMM to model clusters with different sizes, densities, elliptical shapes, and orientations.
