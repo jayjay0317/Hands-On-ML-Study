@@ -47,3 +47,5 @@
 - **Points Between Clusters Are Not Always Anomalies:** A point between two clusters is not automatically an anomaly. If the Gaussian distributions overlap, both components may contribute enough density for the point to be considered normal. However, if the clusters are well separated and the region between them has low density, the point is more likely to be flagged as an anomaly.
 
 - **Why GMM Is More Flexible than k-means:** K-means represents each cluster only by a centroid and assigns instances based on the nearest centroid. In contrast, GMM also learns each cluster's relative weight and covariance structure. This allows GMM to model clusters with different sizes, densities, elliptical shapes, and orientations.
+
+- difference between probability and likelihood
