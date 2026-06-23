@@ -18,6 +18,20 @@
 
 ## 🧠 Self-Reflection & Insights
 
+- **Cluster Distances as a Nonlinear Representation:** I learned that `KMeans.transform()` can create a cluster-based representation by converting each instance into distances from $k$ centroids. When $k$ is smaller than the original number of features, this can act as dimensionality reduction. These distances can also be appended to the original features so that another model can learn both the raw inputs and the instance's relationship to learned clusters.
+
+- **Label Propagation Is Not Always Reliable:** I questioned whether assigning one label to every instance in a cluster could create bias or overconfidence. If a cluster contains instances from different true classes, propagated labels can introduce label noise. Partial label propagation can reduce this risk by assigning labels only to instances close to cluster centroids.
+
+- **Representative Labels Can Be More Useful Than Random Labels:** Labeling representative instances can improve performance because the selected examples cover different regions of the data distribution. Randomly selected labeled examples may be redundant or concentrated in only a small part of the dataset.
+
+- **DBSCAN Parameter Selection Requires More Than Visual Inspection:** The book uses plots to show the effect of different `eps` values, but in practice a k-distance plot can help identify a reasonable neighborhood radius. The final choice should still depend on the scale and expected density of the data.
+
+- **GMM Assumptions Should Be Evaluated:** Assuming Gaussian clusters is a modeling choice, not a guaranteed fact. In practice, I should check whether the data appears reasonably elliptical, whether the learned density structure makes sense, and whether the model performs well for the final task.
+
+- **Understanding Density and Anomalies:** A point between two Gaussian components is not automatically anomalous. If the components overlap, both can contribute density and the point may still be considered normal. This helped me distinguish overall mixture density from cluster membership probability.
+
+
+
 - how does a $k$-dimensional dataset from `KMeans` class's `transform()` method be used as a nonlinear dimensionality reduction technique?
     - how can these distances be used as extra features to train another model? (example)
 
