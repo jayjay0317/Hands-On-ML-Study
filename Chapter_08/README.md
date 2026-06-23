@@ -2,6 +2,19 @@
 
 ## 💡 Key Takeaways
 
+- **K-Means and Cluster Evaluation:** K-means assigns instances to the nearest centroid and works best when clusters are roughly spherical and similarly sized. Since inertia always decreases as the number of clusters increases, lower inertia alone does not guarantee the best value of $k$. Silhouette scores and silhouette diagrams can provide additional evidence about cluster quality.
+
+- **Cluster Distances and Semi-Supervised Learning:** `KMeans.transform()` represents each instance using its distances to the centroids. These distances can be used as cluster-based features, either as a lower-dimensional representation or as extra features for another supervised model. Clustering can also help select representative instances for labeling, but label propagation may introduce noise when clusters contain mixed classes.
+
+- **Mini-Batch K-Means and Image Segmentation:** Mini-batch k-means uses small batches to scale clustering to larger datasets. It may sometimes achieve lower inertia than regular k-means because both methods can converge to different local optima. K-means can also be used for color-based image segmentation by clustering pixel RGB values.
+
+- **DBSCAN:** DBSCAN identifies dense regions as clusters and labels isolated points as anomalies. It can detect arbitrarily shaped clusters, but the results depend strongly on `eps` and `min_samples`.
+
+- **Gaussian Mixture Models:** GMMs model data as a mixture of Gaussian distributions. Unlike k-means, they learn cluster centers, relative weights, and covariance structures, allowing clusters to have different sizes, densities, elliptical shapes, and orientations.
+
+- **GMM Covariance and Density:** With `covariance_type="diag"`, GMM can model axis-aligned ellipses but not rotated ones because the off-diagonal covariance values are fixed at `0`. `predict_proba()` returns cluster membership probabilities, while `score_samples()` returns the overall mixture density, which can be used for anomaly detection.
+
+- **Bayesian GMM and Anomaly Detection:** GMM-based anomaly detection identifies instances in low-density regions. Bayesian GMM can start with more components than necessary and assign near-zero weights to unnecessary components, helping estimate the effective number of clusters.
 
 ## 🧠 Self-Reflection & Insights
 
