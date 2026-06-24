@@ -16,6 +16,8 @@
 
 - **Bayesian GMM and Anomaly Detection:** GMM-based anomaly detection identifies instances in low-density regions. Bayesian GMM can start with more components than necessary and assign near-zero weights to unnecessary components, helping estimate the effective number of clusters.
 
+- **Probability vs. Likelihood:** Probability asks how likely different data outcomes are when the model parameters are fixed. Likelihood asks which parameter values make the observed data most plausible. GMM training uses likelihood-based optimization to estimate the Gaussian weights, means, and covariance matrices that best explain the observed data.
+
 ## 🧠 Self-Reflection & Insights
 
 - **Cluster Distances as a Nonlinear Representation:** I learned that `KMeans.transform()` can create a cluster-based representation by converting each instance into distances from $k$ centroids. When $k$ is smaller than the original number of features, this can act as dimensionality reduction. These distances can also be appended to the original features so that another model can learn both the raw inputs and the instance's relationship to learned clusters.
