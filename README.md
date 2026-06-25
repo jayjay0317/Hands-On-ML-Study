@@ -6,6 +6,8 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 
 ## 📂 Repository Structure
 
+### Part I. The Fundamentals of Machine Learning
+
 | Chapter | Topic | Hands-On Code | Key Takeaways & Insights |
 | :--- | :--- | :---: | :---: |
 | **Chapter 1** | The Machine Learning Landscape | [📝 Notebook](Chapter_01/01_practice.ipynb) | [📖 README](Chapter_01/README.md) |
