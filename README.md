@@ -19,6 +19,12 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | **Chapter 7** | Dimensionality Reduction | [📝 Notebook](Chapter_07/07_dimensionality_reduction.ipynb) | [📖 README](Chapter_07/README.md) |
 | **Chapter 8** | Unsupervised Learning Techniques | [📝 Notebook](Chapter_08/08_unsupervised_learning.ipynb) | [📖 README](Chapter_08/README.md) |
 
+### Part II. Neural Networks and Deep Learning
+
+| Chapter | Topic | Hands-On Code | Key Takeaways & Insights |
+| :--- | :--- | :---: | :---: |
+| **Chapter 9** | Introduction to Arti cial Neural Networks | Coming soon | Coming soon |
+
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
 
 ## 🛠️ Tech Stack & Libraries
