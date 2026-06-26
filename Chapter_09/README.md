@@ -1,1 +1,5 @@
 # Chapter 9: Introduction to Artificial Neural Networks
+
+## 💡 Key Takeaways
+
+## 🧠 Self-Reflection & Insights
