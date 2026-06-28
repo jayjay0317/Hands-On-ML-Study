@@ -10,4 +10,4 @@
     - if only two neurons out of every neuron in the same layer were initialized to the same value, is it equivalent to having one less neuron?
 
 - what makes ReLU so practical and powerful?
-      - Does the binary nature of the ReLU derivative (0 or 1) have any negative impact on Gradient Descent?
+    - Does the binary nature of the ReLU derivative (0 or 1) have any negative impact on Gradient Descent? (especially derivative being 0 for z < 0)
