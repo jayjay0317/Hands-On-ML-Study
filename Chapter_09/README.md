@@ -18,18 +18,14 @@
 
 ## 🧠 Self-Reflection & Insights
 
-- perceptron is a linear model so it has limitations, some of which can be eliminated by stacking multiple perceptrons (mlp)
+- **Symmetry Breaking Is About Learning Diversity:** I learned that random initialization is not just used to make training random. Its main purpose is to ensure that neurons can learn different features. If two neurons begin with exactly the same weights and biases, they remain identical throughout training. If only two neurons are initialized identically, they effectively act like duplicate neurons, so the layer loses some of its useful capacity.
 
-- why neurons in the same layer would learn the same features and the network would behave as if it had only one neuron per layer if all weights were initialized to the same value?
-    - if only two neurons out of every neuron in the same layer were initialized to the same value, is it equivalent to having one less neuron?
+- **ReLU Has a Trade-Off:** ReLU is practical because its derivative is simple: `1` for positive inputs and `0` for negative inputs. For positive inputs, this allows gradients to pass through without shrinking. However, the zero derivative for negative inputs can create “dead” neurons that stop updating. I want to learn later how variants such as Leaky ReLU address this issue.
 
-- what makes ReLU so practical and powerful?
-      - Does the binary nature of the ReLU derivative (0 or 1) have any negative impact on Gradient Descent? (especially derivative being 0 for z < 0)
+- **Scaling Depends on the Meaning of Features:** I learned that preprocessing is not only about putting all features on similar scales. For images, pixel intensity has meaningful structure, so scaling values from `0`–`255` to `0`–`1` can preserve useful information better than forcing every pixel position to have the same variance.
 
-- **Why MinMaxScaler Can Work Better for Images:** `MinMaxScaler` rescales each pixel feature to the `0` to `1` range, which is usually compatible with image intensity values and the default settings of `MLPClassifier`. `StandardScaler` forces every pixel feature to have unit variance, so low-variance background pixels can be amplified relative to their original variation. This may give unnecessary importance to pixels that contain little useful visual information.
+- **High Confidence Does Not Mean High Reliability:** The Fashion MNIST example showed that an MLP can be extremely confident even when its prediction is wrong. This connects to my earlier interest in calibration: model probabilities should be evaluated rather than automatically trusted.
 
-- What make neural networks overconfident even on wrong predictions?
+- **Transfer Learning Requires a Similarity Judgment:** I wondered how many pretrained layers should be reused in transfer learning. My current understanding is that more lower layers can be reused when the new task and data are similar to the original task, while more layers may need fine-tuning when the tasks or input distributions are different.
 
-- how do we choose how many layers to reuse in transfer learning?
-
-- large neural networks rarely get stuck in local minima, and even when they do, these local optima are often almost as good as the global optimum. However, they can still get stuck on long plateaus for a long time.
+- **Loss Landscapes Are More Complex Than Local Minima:** I initially focused on local minima as the main optimization problem. However, plateaus, saddle points, and poorly conditioned regions can also slow training because gradients become very small or progress becomes inefficient.
