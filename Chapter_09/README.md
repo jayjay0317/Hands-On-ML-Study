@@ -6,7 +6,7 @@
 
 - **Backpropagation and Weight Initialization:** Backpropagation computes how each weight and bias contributes to the loss, then gradient descent updates the parameters to reduce the error. Hidden-layer weights must be initialized randomly to break symmetry. If neurons in the same layer start with identical weights and biases, they receive the same inputs, produce the same outputs, and receive identical gradient updates, so they continue learning the same feature.
 
-- **Activation Functions and ReLU:** Nonlinear activation functions are necessary because stacking only linear layers is still equivalent to one linear transformation. ReLU is widely used because it is simple and fast to compute, helps gradients flow for positive inputs, and avoids the bounded-output behavior of sigmoid and `tanh`. However, ReLU can produce zero gradients for negative inputs, which may cause some neurons to stop learning.
+- **Activation Functions and ReLU:** Nonlinear activation functions are necessary because stacking only linear layers is still equivalent to one linear transformation. ReLU is widely used because it is simple and fast to compute, helps gradients flow for positive inputs, and avoids the bounded-output behavior of sigmoid and $tanh$. However, ReLU can produce zero gradients for negative inputs, which may cause some neurons to stop learning.
 
 - **Feature Scaling for Image MLPs:** `MinMaxScaler` rescales pixel values to the `0` to `1` range, which is compatible with image intensities and often works well with the default settings of `MLPClassifier`. In contrast, `StandardScaler` can amplify small variations in low-variance background pixels and give them unnecessary importance.
 
