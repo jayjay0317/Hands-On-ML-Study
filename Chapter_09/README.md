@@ -13,3 +13,5 @@
       - Does the binary nature of the ReLU derivative (0 or 1) have any negative impact on Gradient Descent? (especially derivative being 0 for z < 0)
 
 - **Why MinMaxScaler Can Work Better for Images:** `MinMaxScaler` rescales each pixel feature to the `0` to `1` range, which is usually compatible with image intensity values and the default settings of `MLPClassifier`. `StandardScaler` forces every pixel feature to have unit variance, so low-variance background pixels can be amplified relative to their original variation. This may give unnecessary importance to pixels that contain little useful visual information.
+
+- What make neural networks overconfident even on wrong predictions?
