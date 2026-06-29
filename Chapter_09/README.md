@@ -17,3 +17,5 @@
 - What make neural networks overconfident even on wrong predictions?
 
 - how do we choose how many layers to reuse in transfer learning?
+
+- large neural networks rarely get stuck in local minima, and even when they do, these local optima are often almost as good as the global optimum. However, they can still get stuck on long plateaus for a long time.
