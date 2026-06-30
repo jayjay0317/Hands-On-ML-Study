@@ -24,7 +24,7 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | Chapter | Topic | Hands-On Code | Key Takeaways & Insights |
 | :--- | :--- | :---: | :---: |
 | **Chapter 9** | Introduction to Artificial Neural Networks | [📝 Notebook](Chapter_09/intro_to_neural_networks.ipynb) | [📖 README](Chapter_09/README.md) |
-| **Chapter 10** | Building Neural Networks with PyTorch | [📝 Notebook](Chapter_09/intro_to_neural_networks.ipynb) | [📖 README](Chapter_09/README.md) |
+| **Chapter 10** | Building Neural Networks with \nPyTorch | [📝 Notebook](Chapter_09/intro_to_neural_networks.ipynb) | [📖 README](Chapter_09/README.md) |
 
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
 
