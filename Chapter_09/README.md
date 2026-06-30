@@ -22,7 +22,7 @@
 
 - **ReLU Has a Trade-Off:** ReLU is practical because its derivative is simple: $1$ for positive inputs and $0$ for negative inputs. For positive inputs, this allows gradients to pass through without shrinking. However, the zero derivative for negative inputs can create “dead” neurons that stop updating. I want to learn later how variants such as Leaky ReLU address this issue.
 
-- **Scaling Depends on the Meaning of Features:** I learned that preprocessing is not only about putting all features on similar scales. For images, pixel intensity has meaningful structure, so scaling values from $0$–$255$ to $0$–$1$ can preserve useful information better than forcing every pixel position to have the same variance.
+- **Scaling Depends on the Meaning of Features:** I learned that preprocessing is not only about putting all features on similar scales. For images, pixel intensity has meaningful structure, so scaling values from 0-255 to 0-1 can preserve useful information better than forcing every pixel position to have the same variance.
 
 - **High Confidence Does Not Mean High Reliability:** The Fashion MNIST example showed that an MLP can be extremely confident even when its prediction is wrong. This connects to my earlier interest in calibration: model probabilities should be evaluated rather than automatically trusted.
 
