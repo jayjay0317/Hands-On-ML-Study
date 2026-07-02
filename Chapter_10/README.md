@@ -11,3 +11,5 @@
 - `from_numpy()` creates a tensor on the CPU that just uses the NumPy array’s data directly, without copying it, but modifying the NumPy array will also modify the tensor, and vice versa.
 
 - In-place operations can save memory, but they should be used carefully when working with autograd because modifying tensors needed for backpropagation can cause errors
+
+- GPUs are most effective for large parallel computations. For small operations, the overhead of moving data and coordinating GPU work can reduce or eliminate the speed advantage.
