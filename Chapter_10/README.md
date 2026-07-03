@@ -18,3 +18,5 @@
   PyTorch will consume less RAM and run faster since it won’t have to keep track of the computation graph.
 
 - **Averaging Mini-Batch Losses:** When the last mini-batch is smaller than the other batches, averaging batch losses with `total_loss / len(train_loader)` gives that smaller batch the same weight as a full batch. This slightly changes the reported epoch loss. For an exact instance-level mean loss, multiply each batch loss by its batch size, sum these values, and divide by the total number of instances. This affects only the displayed epoch loss, not the gradient updates themselves.
+
+- **Recreating the Optimizer for a New Model:** An optimizer is connected to the specific parameters passed through `model.parameters()` when it is created. Therefore, after creating a new model or replacing its layers, create a new optimizer so that the new model's weights and biases are updated during training. A loss function such as `nn.MSELoss()` can usually be reused, but redefining it in each independent training section can make the notebook easier to run from top to bottom.
