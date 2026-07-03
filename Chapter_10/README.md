@@ -16,3 +16,5 @@
 
 - It’s best to use a with torch.no_grad() context during inference:
   PyTorch will consume less RAM and run faster since it won’t have to keep track of the computation graph.
+
+- **Averaging Mini-Batch Losses:** When the last mini-batch is smaller than the other batches, averaging batch losses with `total_loss / len(train_loader)` gives that smaller batch the same weight as a full batch. This slightly changes the reported epoch loss. For an exact instance-level mean loss, multiply each batch loss by its batch size, sum these values, and divide by the total number of instances. This affects only the displayed epoch loss, not the gradient updates themselves.
