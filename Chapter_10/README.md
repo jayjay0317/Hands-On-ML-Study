@@ -13,3 +13,6 @@
 - In-place operations can save memory, but they should be used carefully when working with autograd because modifying tensors needed for backpropagation can cause errors
 
 - GPUs are most effective for large parallel computations. For small operations, the overhead of moving data and coordinating GPU work can reduce or eliminate the speed advantage.
+
+- It’s best to use a with torch.no_grad() context during inference:
+  PyTorch will consume less RAM and run faster since it won’t have to keep track of the computation graph.
