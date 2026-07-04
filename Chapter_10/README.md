@@ -23,3 +23,5 @@
 
 - connecting inputs directly to the output layer makes it possible for the neural network to learn both deep patterns and simple rules.
     - a regular MLP forces all the data to flow through the full stack of layers; thus, simple patterns in the data may end up being distorted by this sequence of transformations
+
+- **Why PyTorch Layers Can Be Called Like Functions:** A layer such as `nn.Linear` is an object created from a class, not a regular function. However, PyTorch modules implement Python's special `__call__()` method, which allows an object to be used with function-like syntax such as `layer(X)`. Internally, this calls the layer's `forward()` computation while also allowing PyTorch to manage features such as autograd and hooks.
