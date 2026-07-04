@@ -25,3 +25,9 @@
     - a regular MLP forces all the data to flow through the full stack of layers; thus, simple patterns in the data may end up being distorted by this sequence of transformations
 
 - **Why PyTorch Layers Can Be Called Like Functions:** A layer such as `nn.Linear` is an object created from a class, not a regular function. However, PyTorch modules implement Python's special `__call__()` method, which allows an object to be used with function-like syntax such as `layer(X)`. Internally, this calls the layer's `forward()` computation while also allowing PyTorch to manage features such as autograd and hooks.
+
+- **Starred Unpacking for Multiple Inputs:** Starred unpacking collects a variable number of input tensors into one list. In a batch such as `(X_wide, X_deep, y)`, the statement `for *X_batch_inputs, y_batch in train_loader:` stores the input tensors in `X_batch_inputs` and keeps the final target tensor in `y_batch`.
+
+- **Unpacking Inputs When Calling a Model:** The expression `model(*X_batch_inputs)` unpacks the list of input tensors into separate positional arguments. For example, if `X_batch_inputs` contains `[X_batch_wide, X_batch_deep]`, then `model(*X_batch_inputs)` is equivalent to `model(X_batch_wide, X_batch_deep)`.
+
+- **When Starred Unpacking Is Useful:** This approach is useful when a training loop should support models with different numbers of inputs. Instead of writing separate loops for two-input, three-input, or multimodal models, the loop can move every input tensor to the device and pass them to the model dynamically.
