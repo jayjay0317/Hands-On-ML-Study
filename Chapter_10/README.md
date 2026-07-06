@@ -31,3 +31,5 @@
 - **Unpacking Inputs When Calling a Model:** The expression `model(*X_batch_inputs)` unpacks the list of input tensors into separate positional arguments. For example, if `X_batch_inputs` contains `[X_batch_wide, X_batch_deep]`, then `model(*X_batch_inputs)` is equivalent to `model(X_batch_wide, X_batch_deep)`.
 
 - **When Starred Unpacking Is Useful:** This approach is useful when a training loop should support models with different numbers of inputs. Instead of writing separate loops for two-input, three-input, or multimodal models, the loop can move every input tensor to the device and pass them to the model dynamically.
+
+- **Choosing the Number of Output Neurons:** The output layer depends on the prediction task. For binary classification, one output neuron is usually enough because it represents the score or probability of the positive class. For single-label multiclass classification, use one output neuron per class. For multilabel classification, use one output neuron per possible label because each label is predicted independently. For regression, the number of output neurons matches the number of continuous target values predicted for each instance.
