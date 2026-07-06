@@ -38,4 +38,6 @@
 
 - **Handling Class Imbalance:** In an imbalanced classification dataset, frequent classes can dominate the loss and bias the model toward predicting them more often. `nn.CrossEntropyLoss()` supports a `weight` argument that assigns larger loss weights to rare classes and smaller weights to common classes. A common approach is to use weights inversely proportional to class frequency, then normalize them so they sum to `1`.
 
+- **Practical Optuna Extensions:** Optuna also supports pruning unpromising trials and running trials in parallel to reduce tuning time. These features become more useful when each trial is expensive or when the search space is large.
+
 - **Regression vs. Multiclass Classification MLPs:** The hidden-layer structure can be very similar, but the output layer, targets, loss function, and evaluation metric depend on the task. Regression predicts continuous values, so the number of output neurons matches the target dimension and `nn.MSELoss()` is commonly used. Multiclass classification uses one output neuron per class, returns logits, and commonly uses `nn.CrossEntropyLoss()` with integer class indices. Regression is often evaluated with MSE or RMSE, while classification is often evaluated with accuracy.
