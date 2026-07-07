@@ -41,3 +41,5 @@
 - **Practical Optuna Extensions:** Optuna also supports pruning unpromising trials and running trials in parallel to reduce tuning time. These features become more useful when each trial is expensive or when the search space is large.
 
 - **Regression vs. Multiclass Classification MLPs:** The hidden-layer structure can be very similar, but the output layer, targets, loss function, and evaluation metric depend on the task. Regression predicts continuous values, so the number of output neurons matches the target dimension and `nn.MSELoss()` is commonly used. Multiclass classification uses one output neuron per class, returns logits, and commonly uses `nn.CrossEntropyLoss()` with integer class indices. Regression is often evaluated with MSE or RMSE, while classification is often evaluated with accuracy.
+
+- **Pruning Unpromising Trials:** Optuna can stop trials early when their intermediate performance is unlikely to beat previous trials. This becomes useful when each trial requires many epochs or when the hyperparameter search is large.
