@@ -10,4 +10,4 @@
 
 - **Batch Normalization During Training and Evaluation:** During training, batch normalization uses mini-batch statistics and updates running estimates of the mean and variance. During evaluation, it uses these running estimates instead, so using `model.train()` and `model.eval()` correctly is important.
 
-- **`BatchNorm2d` Normalization:** `nn.BatchNorm2d` normalizes image tensors per channel, not per pixel location. For inputs shaped `[batch_size, channels, height, width]`, it computes each channel's mean and variance across the batch, height, and width dimensions.
+- **Understanding `BatchNorm2d`:** I initially thought `nn.BatchNorm2d` computed separate means and variances for each pixel location. I learned that it actually computes one mean and variance per channel, using all values across the batch and spatial dimensions. For an input shaped `[batch_size, channels, height, width]`, each channel is normalized using statistics from all images and all spatial positions in that channel.
