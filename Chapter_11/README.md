@@ -17,3 +17,5 @@
 - **Broadcasting in Normalization:** In tensor operations, broadcasting allows tensors with compatible shapes to be combined without manually copying values. For example, if `inputs` has shape `[32, 3, 100, 200]` and `means` has shape `[32, 3, 1, 1]`, PyTorch can subtract each image-channel mean from all corresponding height and width positions. Using `keepdim=True` preserves reduced dimensions as size `1`, making this kind of broadcasting easier and less error-prone.
 
 -  adaptive learning rate algorithm, like Adam, AdaGrad, and RMSProp, requires less tuning of the learning rate hyperparameter $\eta$
+
+- **Adam Optimizer:** Adam combines momentum and adaptive learning rates. Momentum helps speed up movement in consistent gradient directions, while the squared-gradient average adjusts each parameter's learning rate by reducing updates in steep directions and allowing relatively larger updates in flatter directions. This often makes training faster and more stable, but it does not guarantee reaching the global minimum.
