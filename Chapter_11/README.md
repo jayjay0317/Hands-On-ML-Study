@@ -19,3 +19,5 @@
 -  adaptive learning rate algorithm, like Adam, AdaGrad, and RMSProp, requires less tuning of the learning rate hyperparameter $\eta$
 
 - **Adam Optimizer:** Adam combines momentum and adaptive learning rates. Momentum helps speed up movement in consistent gradient directions, while the squared-gradient average adjusts each parameter's learning rate by reducing updates in steep directions and allowing relatively larger updates in flatter directions. This often makes training faster and more stable, but it does not guarantee reaching the global minimum.
+
+- **Optimizer Choice:** Adaptive optimizers such as RMSProp, Adam, AdaMax, NAdam, and AdamW often converge quickly, but they do not always generalize best on every dataset. Adam or AdamW are strong defaults, while SGD with momentum or Nesterov momentum can still be worth trying when generalization is disappointing.
