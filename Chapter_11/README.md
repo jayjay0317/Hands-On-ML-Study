@@ -29,3 +29,5 @@
 - The maximum learning rate is chosen using a learning rate finder. Starting from a very small learning rate, we gradually increase it and observe how the loss changes. Very small learning rates make the loss decrease too slowly, while overly large learning rates make the loss unstable. A good maximum learning rate is usually chosen in the range where the loss decreases quickly but before it starts to explode.
 
 - `weight_decay` controls the strength of weight decay and usually plays a role similar to the regularization factor $\lambda$.
+
+- **Dropout Scaling:** Dropout randomly drops activations during training. To keep the average activation scale roughly consistent, the remaining active values are divided by the keep probability $1 - p$. This helps reduce the mismatch between training, where dropout is active, and evaluation, where dropout is turned off.
