@@ -31,3 +31,5 @@
 - `weight_decay` controls the strength of weight decay and usually plays a role similar to the regularization factor $\lambda$.
 
 - **Dropout Scaling:** Dropout randomly drops activations during training. To keep the average activation scale roughly consistent, the remaining active values are divided by the keep probability $1 - p$. This helps reduce the mismatch between training, where dropout is active, and evaluation, where dropout is turned off.
+
+- **MC Dropout as an Ensemble:** Monte Carlo dropout is conceptually similar to bagging or random forests. Instead of training many independent models, it samples many different dropout subnetworks from the same trained neural network and averages their predictions. This can improve prediction reliability and provide uncertainty estimates.
