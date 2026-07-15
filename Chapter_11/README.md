@@ -33,3 +33,5 @@
 - **Dropout Scaling:** Dropout randomly drops activations during training. To keep the average activation scale roughly consistent, the remaining active values are divided by the keep probability $1 - p$. This helps reduce the mismatch between training, where dropout is active, and evaluation, where dropout is turned off.
 
 - **MC Dropout as an Ensemble:** Monte Carlo dropout can be viewed as an ensemble-like method, similar in spirit to random forests. It samples different dropout subnetworks from the same trained neural network and averages their predictions, which can improve reliability and provide uncertainty estimates.
+
+- **Choosing Training Techniques:** Chapter 11 shows that training deep neural networks is not about using every technique at once. The right choices depend on the problem: regularization for overfitting, normalization for deeper networks, learning rate schedules for faster convergence, and MC dropout when uncertainty estimates matter.
