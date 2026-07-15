@@ -32,4 +32,4 @@
 
 - **Dropout Scaling:** Dropout randomly drops activations during training. To keep the average activation scale roughly consistent, the remaining active values are divided by the keep probability $1 - p$. This helps reduce the mismatch between training, where dropout is active, and evaluation, where dropout is turned off.
 
-- **MC Dropout as an Ensemble:** Monte Carlo dropout is conceptually similar to bagging or random forests. Instead of training many independent models, it samples many different dropout subnetworks from the same trained neural network and averages their predictions. This can improve prediction reliability and provide uncertainty estimates.
+- **MC Dropout as an Ensemble:** Monte Carlo dropout can be viewed as an ensemble-like method, similar in spirit to random forests. It samples different dropout subnetworks from the same trained neural network and averages their predictions, which can improve reliability and provide uncertainty estimates.
