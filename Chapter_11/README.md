@@ -16,6 +16,8 @@
 
 - **Practical DNN Defaults:** A reasonable starting setup is He initialization, `ReLU` for shallow networks or `Swish` for deep networks, batch normalization or layer normalization for deep networks, early stopping with weight decay if needed, Nesterov momentum or `AdamW`, and performance scheduling or 1Cycle scheduling.
 
+- **AdamW and Weight Decay:** `AdamW` is often preferred over Adam when using weight decay. The `weight_decay` hyperparameter controls the strength of weight decay and plays a role similar to the regularization factor $\lambda$.
+
 ## 🧠 Self-Reflection & Insights
 
 - **Training vs. Evaluation Mode:** I learned that `model.train()` and `model.eval()` are especially important when using layers such as batch normalization and dropout, because these layers behave differently during training and evaluation.
