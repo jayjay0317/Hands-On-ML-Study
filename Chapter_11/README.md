@@ -29,3 +29,7 @@
 - **Learning Rate Scheduling Trade-Off:** I noticed that some schedulers reduce the learning rate when progress stalls, while others periodically raise it again. This helped me understand the trade-off between fine-tuning near a good solution and encouraging renewed exploration.
 
 - **Dropout and MC Dropout:** Dropout reduces overfitting by randomly dropping activations during training and scaling the remaining values by the keep probability $1 - p$. MC dropout extends this idea by keeping dropout active during evaluation and averaging multiple predictions, making it similar in spirit to an ensemble method.
+
+- **Learning Rate Finder Intuition:** I learned that the maximum learning rate for 1Cycle scheduling can be chosen using a learning rate finder. The goal is to find a range where the loss decreases quickly, but before the learning rate becomes so large that training becomes unstable.
+
+- **Choosing Training Techniques:** Chapter 11 made me realize that training deep neural networks is not about using every technique at once. The right choices depend on the problem, such as using regularization for overfitting, normalization for deeper networks, learning rate schedules for faster convergence, and MC dropout when uncertainty estimates matter.
