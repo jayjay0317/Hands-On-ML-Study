@@ -26,7 +26,7 @@ Each chapter contains a detailed Jupyter Notebook with hands-on code and a READM
 | **Chapter 9** | Introduction to Artificial Neural Networks | [📝 Notebook](Chapter_09/intro_to_neural_networks.ipynb) | [📖 README](Chapter_09/README.md) |
 | **Chapter 10** | Building Neural Networks with<br>PyTorch | [📝 Notebook](Chapter_10/building_neural_networks.ipynb) | [📖 README](Chapter_10/README.md) |
 | **Chapter 11** | Training Deep Neural Networks | [📝 Notebook](Chapter_11/training_dnn.ipynb) | [📖 README](Chapter_11/README.md) |
-| **Chapter 12** | Deep Computer Vision Using<br>Convolutional Neural Networks | [📝 Notebook](Chapter_12/cv_using_cnn.ipynb) | [📖 README](Chapter_11/README.md) |
+| **Chapter 12** | Deep Computer Vision Using<br>Convolutional Neural Networks | [📝 Notebook](Chapter_12/cv_using_cnn.ipynb) | [📖 README](Chapter_12/README.md) |
 
 > **Note:** The file paths above are relative. Please click the links to navigate directly to the respective notebooks and summary documents.
 
