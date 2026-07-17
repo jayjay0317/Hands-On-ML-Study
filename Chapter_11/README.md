@@ -2,6 +2,20 @@
 
 ## 💡 Key Takeaways
 
+- **Stable Deep Network Training:** Deep neural networks can suffer from vanishing or exploding gradients. Better initialization, non-saturating activation functions, normalization layers, and gradient clipping can make training more stable.
+
+- **Initialization and Activation Functions:** PyTorch layers initialize parameters automatically, but explicitly matching initialization to the activation function can help deeper networks. For example, He/Kaiming initialization works well with `ReLU`, while activation functions such as ELU, GELU, and Swish can improve gradient flow.
+
+- **Normalization Layers:** Batch normalization and layer normalization help stabilize training. Batch normalization depends on mini-batch statistics during training and running estimates during evaluation, so using `model.train()` and `model.eval()` correctly is important.
+
+- **Transfer Learning and Pretraining:** Reusing pretrained layers can help when the source and target tasks are similar. When labeled data is limited, unsupervised pretraining or pretraining on an auxiliary task can also provide useful representations.
+
+- **Optimizers and Learning Rate Schedules:** Momentum, Nesterov momentum, RMSProp, Adam, and AdamW can speed up training compared to plain gradient descent. Learning rate schedules such as performance scheduling, cosine annealing, warm-up, and 1Cycle scheduling adjust the learning rate to balance fast progress and careful fine-tuning.
+
+- **Regularization Techniques:** $\ell_1$ regularization, $\ell_2$ regularization, weight decay, dropout, and max-norm regularization help reduce overfitting. Stronger regularization can improve generalization, but too much can cause underfitting.
+
+- **Practical DNN Defaults:** A reasonable starting setup is He initialization, `ReLU` for shallow networks or `Swish` for deep networks, batch normalization or layer normalization for deep networks, early stopping with weight decay if needed, Nesterov momentum or `AdamW`, and performance scheduling or 1Cycle scheduling.
+
 ## 🧠 Self-Reflection & Insights
 
 - **PyTorch Initialization:** PyTorch layers automatically initialize their parameters, so manual initialization is not always necessary. However, for deeper networks, explicitly matching the initialization method to the activation function, such as He/Kaiming initialization for `ReLU`, can make training more stable.
