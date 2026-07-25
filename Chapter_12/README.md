@@ -11,3 +11,5 @@
 - **Weights in a Convolutional Neuron:** Each neuron in an output feature map uses a filter with $f_h \times f_w \times f_{n'}$ weights, where $f_h$ and $f_w$ are the kernel dimensions and $f_{n'}$ is the number of input feature maps. Neurons in the same output feature map share this filter and differ only in the input region they process.
 
 Depthwise max pooling takes the maximum activation across several feature maps at the same spatial location, allowing the network to ignore which specific feature variant, such as a rotation, produced the strongest response.
+
+- **Typical CNN Architecture:** CNNs usually stack convolutional layers and activation functions, followed by pooling layers. As the spatial dimensions decrease, the number of feature maps often increases. Near the output, the feature maps are flattened and passed to fully connected layers for classification.
