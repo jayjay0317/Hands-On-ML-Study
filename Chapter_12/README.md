@@ -15,3 +15,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **Typical CNN Architecture:** CNNs usually stack convolutional layers and activation functions, followed by pooling layers. As the spatial dimensions decrease, the number of feature maps often increases. Near the output, the feature maps are flattened and passed to fully connected layers for classification.
 
 - **Using `functools.partial()`:** `functools.partial()` creates a new callable with selected arguments already fixed. It is useful for reducing repeated code when the same function or class is called many times with shared default arguments.
+
+- **Data Augmentation:** Data augmentation reduces overfitting by creating realistic variations of training images, helping CNNs become more robust to changes in position, orientation, size, and lighting.
