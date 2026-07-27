@@ -17,3 +17,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **Using `functools.partial()`:** `functools.partial()` creates a new callable with selected arguments already fixed. It is useful for reducing repeated code when the same function or class is called many times with shared default arguments.
 
 - **Data Augmentation:** Data augmentation reduces overfitting by creating realistic variations of training images, helping CNNs become more robust to changes in position, orientation, size, and lighting.
+
+- **GoogLeNet and Inception Modules:** Inception modules process the same input through multiple parallel branches with different kernel sizes, then concatenate the resulting feature maps. `1 × 1` convolutions act as bottlenecks that reduce computational cost while learning relationships across channels.
