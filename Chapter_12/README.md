@@ -26,5 +26,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 
 - A residual unit splits the input into two paths:
   - The residual branch learns a transformation $F(x)$.
-  - The shortcut branch passes the original input $x$ forward.
+  - The shortcut branch passes the original input $x$ forward.  
   The two paths are added element-wise to produce $F(x) + x$.
