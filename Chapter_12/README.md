@@ -21,3 +21,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **GoogLeNet and Inception Modules:** Inception modules process the same input through multiple parallel branches with different kernel sizes, then concatenate the resulting feature maps. `1 × 1` convolutions act as bottlenecks that reduce computational cost while learning relationships across channels.
 
 - **Why Inception Modules Use Parallel Branches:** A sequential stack of convolutional layers transforms features through a single path, with each layer processing only the previous layer’s output. In contrast, an inception module applies different operations to the same input in parallel, such as `1 × 1`, `3 × 3`, and `5 × 5` convolutions and max pooling. This allows the network to capture features at multiple spatial scales, then concatenate them along the channel dimension. `1 × 1` convolutions are also used as bottlenecks to reduce the number of channels before more expensive convolutions, limiting the computational cost.
+
+- How does skipping a random set of residual units not compromise accuracy while speeding up training? Does it have a regularization effect like dropout?
