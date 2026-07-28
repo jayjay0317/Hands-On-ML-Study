@@ -23,3 +23,8 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **Why Inception Modules Use Parallel Branches:** A sequential stack of convolutional layers transforms features through a single path, with each layer processing only the previous layer’s output. In contrast, an inception module applies different operations to the same input in parallel, such as `1 × 1`, `3 × 3`, and `5 × 5` convolutions and max pooling. This allows the network to capture features at multiple spatial scales, then concatenate them along the channel dimension. `1 × 1` convolutions are also used as bottlenecks to reduce the number of channels before more expensive convolutions, limiting the computational cost.
 
 - How does skipping a random set of residual units not compromise accuracy while speeding up training? Does it have a regularization effect like dropout?
+
+- A residual unit splits the input into two paths:
+  - The residual branch learns a transformation $F(x)$.
+  - The shortcut branch passes the original input $x$ forward.
+  The two paths are added element-wise to produce $F(x) + x$.
