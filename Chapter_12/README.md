@@ -28,3 +28,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
   - The residual branch learns a transformation $F(x)$.
   - The shortcut branch passes the original input $x$ forward.  
   The two paths are added element-wise to produce $F(x) + x$.
+
+- **Global Average Pooling:** Global average pooling replaces each feature map with the average of all its spatial activations, reducing an input of shape `[batch_size, channels, height, width]` to `[batch_size, channels, 1, 1]`. This greatly reduces the number of features and parameters before the output layer, lowers computational cost and overfitting risk, and emphasizes whether a feature is present rather than its exact location. It is therefore especially useful for image classification, where precise spatial information is often less important.
