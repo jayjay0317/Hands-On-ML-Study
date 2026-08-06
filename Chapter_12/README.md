@@ -33,4 +33,8 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 
 - **EfficientNet:** EfficientNet uses compound scaling to increase network depth, width, and input resolution together instead of scaling only one dimension. This balanced approach allows larger models to use additional computational resources more efficiently.
 
+- **Transfer Learning with Pretrained CNNs:** When the target dataset is small, a model pretrained on a large dataset can be reused by replacing its classification head. The pretrained layers are initially frozen while the new head is trained, then the full model can be unfrozen and fine-tuned with a smaller learning rate.
+
+- **Data Augmentation for Transfer Learning:** Random flips, rotations, crops, and color adjustments can increase the effective diversity of the training data. These transformations should be applied before converting the images to tensors and normalizing them with the pretrained model’s expected channel statistics.
+
 - **Saved Activations in RevNets:** During a normal forward pass, intermediate layer outputs are stored because they are needed for backpropagation. RevNets instead keep the model parameters and final outputs, then reconstruct earlier activations by running the reversible functions backward. This reduces memory usage but requires additional computation.
