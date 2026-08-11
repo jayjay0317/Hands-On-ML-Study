@@ -38,3 +38,5 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **Data Augmentation for Transfer Learning:** Random flips, rotations, crops, and color adjustments can increase the effective diversity of the training data. These transformations should be applied before converting the images to tensors and normalizing them with the pretrained model’s expected channel statistics.
 
 - **Saved Activations in RevNets:** During a normal forward pass, intermediate layer outputs are stored because they are needed for backpropagation. RevNets instead keep the model parameters and final outputs, then reconstruct earlier activations by running the reversible functions backward. This reduces memory usage but requires additional computation.
+
+- **Fully Convolutional Networks:** FCNs replace dense layers with convolutional layers, allowing the network to process images of different spatial sizes. For object detection, this produces a grid of predictions in a single forward pass, providing a much more efficient alternative to repeatedly sliding a CNN across the image.
