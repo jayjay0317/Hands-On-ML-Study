@@ -40,3 +40,7 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 - **Saved Activations in RevNets:** During a normal forward pass, intermediate layer outputs are stored because they are needed for backpropagation. RevNets instead keep the model parameters and final outputs, then reconstruct earlier activations by running the reversible functions backward. This reduces memory usage but requires additional computation.
 
 - **Fully Convolutional Networks:** FCNs replace dense layers with convolutional layers, allowing the network to process images of different spatial sizes. For object detection, this produces a grid of predictions in a single forward pass, providing a much more efficient alternative to repeatedly sliding a CNN across the image.
+
+- **Semantic Segmentation:** Semantic segmentation assigns a class to every pixel in an image. Since CNNs lose spatial resolution as features pass through strided and pooling layers, transposed convolutions are used for upsampling, while skip connections recover finer spatial details from earlier feature maps.
+
+- **Instance Segmentation:** Unlike semantic segmentation, instance segmentation distinguishes separate objects of the same class and predicts an individual pixel mask for each object.
