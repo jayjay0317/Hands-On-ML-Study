@@ -41,6 +41,8 @@ Depthwise max pooling takes the maximum activation across several feature maps a
 
 - **Fully Convolutional Networks:** FCNs replace dense layers with convolutional layers, allowing the network to process images of different spatial sizes. For object detection, this produces a grid of predictions in a single forward pass, providing a much more efficient alternative to repeatedly sliding a CNN across the image.
 
+- **Why Segmentation Downsamples and Then Upsamples:** CNNs reduce spatial resolution with strides or pooling so deeper layers can learn higher-level features with larger receptive fields while reducing computation. However, semantic segmentation also requires precise pixel-level locations, so the network later upsamples these low-resolution features using transposed convolutions. Skip connections recover finer spatial information from earlier, higher-resolution layers. In short, downsampling helps the network understand **what** is in the image, while upsampling and skip connections help recover **where** it is.
+
 - **Semantic Segmentation:** Semantic segmentation assigns a class to every pixel in an image. Since CNNs lose spatial resolution as features pass through strided and pooling layers, transposed convolutions are used for upsampling, while skip connections recover finer spatial details from earlier feature maps.
 
 - **Instance Segmentation:** Unlike semantic segmentation, instance segmentation distinguishes separate objects of the same class and predicts an individual pixel mask for each object.
