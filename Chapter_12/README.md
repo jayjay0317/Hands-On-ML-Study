@@ -2,6 +2,22 @@
 
 ## 💡 Key Takeaways
 
+- **Filters and Feature Maps:** One filter is applied across all spatial locations to produce one feature map. Each filter spans all input channels, and neurons within the same output feature map share the same filter weights and bias.
+
+- **Typical CNN Architecture:** CNNs usually stack convolutional layers, activation functions, and pooling layers. As spatial dimensions decrease, the number of feature maps often increases, allowing deeper layers to learn higher-level features.
+
+- **Global Average Pooling:** Global average pooling reduces each feature map to one average activation, greatly reducing the number of features and parameters before the output layer.
+
+- **Data Augmentation:** Random transformations such as flips, rotations, crops, and color adjustments reduce overfitting by exposing the model to realistic variations of training images.
+
+- **Modern CNN Architectures:** Inception modules capture features at multiple spatial scales using parallel branches, residual units use shortcut connections to learn $F(x) + x$, and EfficientNet scales depth, width, and input resolution together.
+
+- **Transfer Learning:** A pretrained CNN can be adapted to a smaller target dataset by replacing its classification head, initially freezing the pretrained layers, and later fine-tuning the full model with a smaller learning rate.
+
+- **Fully Convolutional Networks:** FCNs replace dense layers with convolutional layers, allowing the network to process different spatial input sizes and produce predictions across multiple image regions in a single forward pass.
+
+- **Semantic and Instance Segmentation:** Semantic segmentation assigns a class to every pixel, while instance segmentation additionally distinguishes separate objects of the same class.
+
 ## 🧠 Self-Reflection & Insights
 
 - **Filters and Feature Maps:** One filter is applied across all spatial locations to produce one 2D feature map. Each position in that feature map is the output of one neuron. A convolutional layer contains multiple filters, so it outputs multiple stacked feature maps. Neurons within the same feature map share the same filter weights and bias.
