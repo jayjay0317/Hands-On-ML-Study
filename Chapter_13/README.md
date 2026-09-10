@@ -11,3 +11,5 @@
 - **Memory Cells and Hidden State:** An RNN preserves information through a hidden state $h_{(t)}$, which is updated from the current input $x_{(t)}$ and the previous state $h_{(t-1)}$. In a basic RNN cell, the hidden state is also used directly as the output.
 
 - **RNN Input-Output Structures:** RNNs can be used as sequence-to-sequence, sequence-to-vector, vector-to-sequence, or encoder-decoder models depending on the task.
+
+- **Backpropagation Through Time:** BPTT trains an RNN by unrolling it across time, computing the loss from the relevant outputs, and propagating gradients backward through the sequence. Since the same parameters are reused at every time step, their gradients accumulate contributions from multiple time steps before the update.
