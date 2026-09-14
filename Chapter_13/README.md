@@ -13,3 +13,5 @@
 - **RNN Input-Output Structures:** RNNs can be used as sequence-to-sequence, sequence-to-vector, vector-to-sequence, or encoder-decoder models depending on the task.
 
 - **Backpropagation Through Time:** BPTT trains an RNN by unrolling it across time, computing the loss from the relevant outputs, and propagating gradients backward through the sequence. Since the same parameters are reused at every time step, their gradients accumulate contributions from multiple time steps before the update.
+
+- **How RNN Weights Are Organized:** Conceptually, each recurrent neuron has its own input-weight vector, recurrent-weight vector, and bias. In practice, these are grouped into shared matrices such as $W_x$ for current inputs and $W_h$ for previous hidden states.
